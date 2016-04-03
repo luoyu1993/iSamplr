@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iSamplr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,176 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yp7-n5-ws7">
+                                <rect key="frame" x="20" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="41" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button11tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="644-0r-RgC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOX-IL-lWd">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="165" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="41" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="173" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button12tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwu-td-wPw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-wX-Cck">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="310" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="199" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="318" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button13tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qgh-wx-ygn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2L-1f-jFJ">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="455" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="199" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="463" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button14tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b2U-hn-dkA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV2-kR-Dak">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="310" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="357" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="318" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button21tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tns-dD-6y8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faY-o3-t47">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="455" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="357" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="463" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button22tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4TG-R7-f2k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-Us-MHj">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="455" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="515" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="463" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button24tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gLc-Tl-tBO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8g-cL-UVJ">
+                                <rect key="frame" x="164" y="28" width="125" height="125"/>
+                                <state key="normal" backgroundImage="button.png"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="310" y="28" width="125" height="125"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="515" width="150" height="150"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="318" y="28" width="125" height="125"/>
+                                </variation>
+                                <connections>
+                                    <action selector="button23tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scd-m9-QhT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="3ww-wX-Cck"/>
+                                <exclude reference="T2L-1f-jFJ"/>
+                                <exclude reference="fV2-kR-Dak"/>
+                                <exclude reference="faY-o3-t47"/>
+                                <exclude reference="uIq-Us-MHj"/>
+                                <exclude reference="W8g-cL-UVJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="3ww-wX-Cck"/>
+                                <include reference="T2L-1f-jFJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="fV2-kR-Dak"/>
+                                <include reference="faY-o3-t47"/>
+                                <include reference="uIq-Us-MHj"/>
+                                <include reference="W8g-cL-UVJ"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="button11" destination="yp7-n5-ws7" id="X7V-hg-24L"/>
+                        <outlet property="button12" destination="BOX-IL-lWd" id="2WN-7A-ug5"/>
+                        <outlet property="button13" destination="3ww-wX-Cck" id="RLw-GT-ewN"/>
+                        <outlet property="button14" destination="T2L-1f-jFJ" id="kGh-8M-0h0"/>
+                        <outlet property="button21" destination="fV2-kR-Dak" id="n8R-t1-dNc"/>
+                        <outlet property="button22" destination="faY-o3-t47" id="Wcs-bP-RAL"/>
+                        <outlet property="button23" destination="W8g-cL-UVJ" id="Hym-cO-4s7"/>
+                        <outlet property="button24" destination="uIq-Us-MHj" id="82v-Uv-kMj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="492" y="442.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button.png" width="125" height="125"/>
+    </resources>
 </document>
