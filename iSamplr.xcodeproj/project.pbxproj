@@ -15,11 +15,7 @@
 		3586127B1CB0E9100069BC3E /* iSamplrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3586127A1CB0E9100069BC3E /* iSamplrTests.swift */; };
 		358612871CB0E9D20069BC3E /* button_lit.png in Resources */ = {isa = PBXBuildFile; fileRef = 358612851CB0E9D20069BC3E /* button_lit.png */; };
 		358612881CB0E9D20069BC3E /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 358612861CB0E9D20069BC3E /* button.png */; };
-		3586128D1CB105C30069BC3E /* clap.wav in Resources */ = {isa = PBXBuildFile; fileRef = 358612891CB105C30069BC3E /* clap.wav */; };
-		3586128E1CB105C30069BC3E /* hat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3586128A1CB105C30069BC3E /* hat.wav */; };
-		3586128F1CB105C30069BC3E /* kick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3586128B1CB105C30069BC3E /* kick.wav */; };
-		358612901CB105C30069BC3E /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3586128C1CB105C30069BC3E /* snare.wav */; };
-		358612921CB144D50069BC3E /* synth.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 358612911CB144D50069BC3E /* synth.m4a */; };
+		358C46001CB8187A00F00888 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 358C45FF1CB8187A00F00888 /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +41,7 @@
 		3586127C1CB0E9100069BC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358612851CB0E9D20069BC3E /* button_lit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_lit.png; sourceTree = "<group>"; };
 		358612861CB0E9D20069BC3E /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
-		358612891CB105C30069BC3E /* clap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clap.wav; sourceTree = "<group>"; };
-		3586128A1CB105C30069BC3E /* hat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hat.wav; sourceTree = "<group>"; };
-		3586128B1CB105C30069BC3E /* kick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kick.wav; sourceTree = "<group>"; };
-		3586128C1CB105C30069BC3E /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
-		358612911CB144D50069BC3E /* synth.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = synth.m4a; sourceTree = "<group>"; };
+		358C45FF1CB8187A00F00888 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,16 +83,12 @@
 		358612641CB0E9100069BC3E /* iSamplr */ = {
 			isa = PBXGroup;
 			children = (
+				358C45FF1CB8187A00F00888 /* Sounds */,
 				358612851CB0E9D20069BC3E /* button_lit.png */,
 				358612861CB0E9D20069BC3E /* button.png */,
 				358612651CB0E9100069BC3E /* AppDelegate.swift */,
 				358612671CB0E9100069BC3E /* ViewController.swift */,
-				358612891CB105C30069BC3E /* clap.wav */,
-				3586128A1CB105C30069BC3E /* hat.wav */,
-				3586128B1CB105C30069BC3E /* kick.wav */,
-				3586128C1CB105C30069BC3E /* snare.wav */,
 				358612691CB0E9100069BC3E /* Main.storyboard */,
-				358612911CB144D50069BC3E /* synth.m4a */,
 				3586126C1CB0E9100069BC3E /* Assets.xcassets */,
 				3586126E1CB0E9100069BC3E /* LaunchScreen.storyboard */,
 				358612711CB0E9100069BC3E /* Info.plist */,
@@ -199,16 +187,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3586128D1CB105C30069BC3E /* clap.wav in Resources */,
-				358612901CB105C30069BC3E /* snare.wav in Resources */,
+				358C46001CB8187A00F00888 /* Sounds in Resources */,
 				358612701CB0E9100069BC3E /* LaunchScreen.storyboard in Resources */,
 				358612881CB0E9D20069BC3E /* button.png in Resources */,
-				3586128E1CB105C30069BC3E /* hat.wav in Resources */,
 				358612871CB0E9D20069BC3E /* button_lit.png in Resources */,
 				3586126D1CB0E9100069BC3E /* Assets.xcassets in Resources */,
-				3586128F1CB105C30069BC3E /* kick.wav in Resources */,
 				3586126B1CB0E9100069BC3E /* Main.storyboard in Resources */,
-				358612921CB144D50069BC3E /* synth.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iSamplr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hunj.iSamplr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = iSamplr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.hunj.iSamplr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,6 +407,7 @@
 				358612811CB0E9100069BC3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		358612821CB0E9100069BC3E /* Build configuration list for PBXNativeTarget "iSamplrTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +416,7 @@
 				358612841CB0E9100069BC3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
