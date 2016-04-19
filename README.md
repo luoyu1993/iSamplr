@@ -25,4 +25,23 @@ The user will be prompted to do one of the followings in the “smart menu”: r
 User will be able to put in his/her own sampled sound files, as well as extract a sample clip from iPad to his/her computer. 
 
 ## Implementation
-- View: 	- Main view: 16 Buttons	- "Smart Menu"	- Record Sound view	- Sound samples list (table view)- Array of 16 instances of `Button`- `Button`	- Methods:		- `Tapped` plays the sound clip that is bound to this button		- `Held` displays the option:			- Record new (recorded into a file)			- Load a file (either recorded ones or pre-loaded ones via iTunes-iOS File Sharing)			- Change default color (for visual effect)			- Change tapping color (for visual effect)
+Follow the MVC pattern:
+
+- Model: `ButtonModel`
+	- set up `playerButton` at `viewDidLoad`
+- View:
+	- main storyboard
+		- 16 buttons view (4x4 form)
+	- button options
+		- sample list
+		- record view
+		- change button image view
+- Controller: `ViewController`
+	- tapping a button:
+		- changes to tapping image and back to normal image
+		- plays the sound
+	- holding a button:
+		- record new -> model
+		- load file -> model
+		- change default image -> model
+		- change tapping image -> model
