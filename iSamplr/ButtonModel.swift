@@ -29,6 +29,11 @@ class ButtonModel {
 		players[index].setSound(soundFile, fileExtension: fileExtension)
 	}
 	
+	
+	private func addButtonToModel(button: UIButton) {
+		players.append(playerButton(button: button))
+	}
+	
 	private func addButtonToModel(button: UIButton, soundFile: String, fileExtension: String) {
 		players.append(playerButton(button: button))
 		players.last?.setSound(soundFile, fileExtension: fileExtension)

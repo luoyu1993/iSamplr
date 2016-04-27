@@ -13,8 +13,11 @@ import UIKit
 class playerButton {
 	var restImage = UIImage(named: "button.png")
 	var tapImage = UIImage(named: "button.png")
+	var soundFile: String?
+	var fileExtension: String?
 	var player = AVAudioPlayer()
 	var button: UIButton?
+	var timer = NSDate()
 	
 	init() {
 		// creates an empty instance
@@ -26,6 +29,8 @@ class playerButton {
 	
 	init(button: UIButton, soundFile: String, fileExtension: String) {
 		self.button = button
+		self.soundFile = soundFile
+		self.fileExtension = fileExtension
 		setSound(soundFile, fileExtension: fileExtension)
 	}
 	
