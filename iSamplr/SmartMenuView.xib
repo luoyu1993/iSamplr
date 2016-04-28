@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SmartMenuViewController" customModule="iSamplr" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="xWX-Qo-f7j" id="apg-DQ-TL3"/>
+                <outlet property="changeDisplayColorButton" destination="yM9-xS-mLB" id="efi-O4-IMw"/>
+                <outlet property="changeTapColorButton" destination="2jc-xa-1MI" id="Zmn-sw-w3u"/>
+                <outlet property="loadSoundFileButton" destination="eIh-co-X0B" id="e5W-c2-ano"/>
+                <outlet property="recordButton" destination="0Ux-8g-SOS" id="uuS-aE-yJk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SmartMenuView" customModule="iSamplr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWX-Qo-f7j">
+                    <rect key="frame" x="200" y="200" width="200" height="200"/>
+                    <state key="normal" title="Cancel"/>
+                    <connections>
+                        <action selector="cancelButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="UTc-bE-SFM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-co-X0B">
+                    <rect key="frame" x="400" y="200" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="KVY-yk-dKI"/>
+                        <constraint firstAttribute="width" constant="200" id="gHh-JJ-Pxa"/>
+                    </constraints>
+                    <state key="normal" title="Load"/>
+                    <connections>
+                        <action selector="loadButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="NM8-UZ-mao"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-8g-SOS">
+                    <rect key="frame" x="200" y="0.0" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="cHl-uJ-Kj0"/>
+                        <constraint firstAttribute="width" constant="200" id="e4M-ZN-lAg"/>
+                    </constraints>
+                    <state key="normal" title="REC"/>
+                    <connections>
+                        <action selector="recordButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Exv-CB-zYh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-xS-mLB">
+                    <rect key="frame" x="0.0" y="200" width="200" height="200"/>
+                    <state key="normal" title="Change Display Color"/>
+                    <connections>
+                        <action selector="changeDisplayColorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fwi-ZQ-EP6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jc-xa-1MI">
+                    <rect key="frame" x="200" y="400" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Nd6-w8-Prz"/>
+                    </constraints>
+                    <state key="normal" title="Change Tap Color"/>
+                    <connections>
+                        <action selector="changeTapColorButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Va3-H3-rYm"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yM9-xS-mLB" firstAttribute="top" secondItem="xWX-Qo-f7j" secondAttribute="top" id="0S5-nB-K2l"/>
+                <constraint firstItem="0Ux-8g-SOS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5PZ-yY-dfS"/>
+                <constraint firstItem="yM9-xS-mLB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="E8S-gp-RRm"/>
+                <constraint firstItem="yM9-xS-mLB" firstAttribute="baseline" secondItem="xWX-Qo-f7j" secondAttribute="firstBaseline" id="Myc-0E-lLC"/>
+                <constraint firstItem="2jc-xa-1MI" firstAttribute="leading" secondItem="0Ux-8g-SOS" secondAttribute="leading" id="O57-7p-8ao"/>
+                <constraint firstAttribute="trailing" secondItem="eIh-co-X0B" secondAttribute="trailing" id="TEs-TQ-kjn"/>
+                <constraint firstItem="eIh-co-X0B" firstAttribute="leading" secondItem="xWX-Qo-f7j" secondAttribute="trailing" id="XRc-SA-aNW"/>
+                <constraint firstAttribute="bottom" secondItem="2jc-xa-1MI" secondAttribute="bottom" id="abU-Nf-6Jp"/>
+                <constraint firstItem="2jc-xa-1MI" firstAttribute="trailing" secondItem="0Ux-8g-SOS" secondAttribute="trailing" id="bFw-Pd-tLz"/>
+                <constraint firstItem="yM9-xS-mLB" firstAttribute="baseline" secondItem="eIh-co-X0B" secondAttribute="baseline" id="bgA-Dq-sMK"/>
+                <constraint firstItem="xWX-Qo-f7j" firstAttribute="top" secondItem="0Ux-8g-SOS" secondAttribute="bottom" id="dUX-Kr-ozY"/>
+                <constraint firstItem="xWX-Qo-f7j" firstAttribute="leading" secondItem="yM9-xS-mLB" secondAttribute="trailing" id="g5S-IO-xKu"/>
+                <constraint firstItem="2jc-xa-1MI" firstAttribute="trailing" secondItem="xWX-Qo-f7j" secondAttribute="trailing" id="i4g-DE-xTo"/>
+                <constraint firstItem="2jc-xa-1MI" firstAttribute="leading" secondItem="xWX-Qo-f7j" secondAttribute="leading" id="lhG-sV-nnB"/>
+                <constraint firstItem="yM9-xS-mLB" firstAttribute="firstBaseline" secondItem="xWX-Qo-f7j" secondAttribute="baseline" id="ow4-oe-4TI"/>
+                <constraint firstItem="2jc-xa-1MI" firstAttribute="top" secondItem="xWX-Qo-f7j" secondAttribute="bottom" id="zXW-UP-IpU"/>
+            </constraints>
+            <connections>
+                <outlet property="cancelButton" destination="xWX-Qo-f7j" id="NzG-vn-jd0"/>
+                <outlet property="changeDisplayColorButton" destination="yM9-xS-mLB" id="pOg-5F-mHa"/>
+                <outlet property="changeTapColorButton" destination="2jc-xa-1MI" id="WDT-2D-gtl"/>
+                <outlet property="loadSoundFileButton" destination="eIh-co-X0B" id="d9A-JS-p6G"/>
+                <outlet property="recordButton" destination="0Ux-8g-SOS" id="bYF-bj-HJ4"/>
+            </connections>
+            <point key="canvasLocation" x="365" y="313"/>
+        </view>
+    </objects>
+</document>

@@ -38,12 +38,18 @@ class ViewController: UIViewController {
 	@IBOutlet var button43: UIButton!
 	@IBOutlet var button44: UIButton!
 	
+	// the overlay smart menu view when the user press+holds a button for >1 sec
+	lazy var smartMenuView: SmartMenuView = {
+		let v = SmartMenuView()
+		return v
+	}()
+	
 	// MARK: overridden UIViewController functions
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		setupButtons()
+		setupSampleButtons()
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -67,13 +73,12 @@ class ViewController: UIViewController {
 	*	show a menu.
 	* otherwise play the sound that it is bound to (if no sound, no play).
 	*/
-	@IBAction func buttonRelease(sender: AnyObject) {
+	@IBAction func buttonRelease(sender: UIButton) {
 		let endTimer = NSDate()
-		print("button release, timer end, time difference is: " + String(endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer)))
+		print("button release, timer end, time difference is: " + String(endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer)))	
 		if endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer) >= 1.0 {
-			print("should call menu")
-			
-			
+			// calls the smart menu
+			smartMenuView.displayView(self.view, onButton: sender)
 		} else {
 			// dirty trik
 			if let sf = instance.players[sender.tag].soundFile, fe = instance.players[sender.tag].fileExtension {

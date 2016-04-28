@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iSamplr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="iSamplr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pUk-te-OSJ"/>
                         <viewControllerLayoutGuide type="bottom" id="fKy-WI-taO"/>
@@ -29,8 +29,8 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wqa-mc-8Wo"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="nhV-x1-dOa"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lhm-qf-PgM"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="Hl0-xG-sp9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-uc-1IG">
@@ -38,8 +38,8 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eye-Nw-VgI"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="Obe-nQ-9GA"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L76-BZ-7FT"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="M9s-TX-4bC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voB-Sw-aRN">
@@ -47,8 +47,7 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDN-3r-eze"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="y2P-Op-wjT"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBW-wt-2mS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-pU-ufH">
@@ -56,8 +55,7 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wie-ic-QUE"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="KFA-z8-mYA"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nr-Nv-dGC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -71,7 +69,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQy-NH-Pgl"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="MhN-Vr-Fxh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9w-jK-MMQ">
@@ -80,7 +77,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfj-Wu-YHH"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="fen-8k-cKd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="709-q9-IDm">
@@ -89,7 +85,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0l-JT-xgD"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="MvC-8P-jpq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kca-zb-q39">
@@ -98,7 +93,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IvO-j1-JCE"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="8cP-mg-BwO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -112,7 +106,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p60-cp-krX"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="7wK-eZ-SiO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6P-Vh-pkh">
@@ -121,7 +114,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eR9-Uq-FhG"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="cxa-bQ-teg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-P3-AM2">
@@ -130,7 +122,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AmG-QR-40p"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="RWj-GR-tNU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-HC-op1">
@@ -139,7 +130,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcV-gy-6Rg"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="FnB-ht-zye"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -153,7 +143,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NmK-md-ySK"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="lea-f8-epn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="13" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-2S-amN">
@@ -162,7 +151,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jes-x1-w4G"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="EJj-pt-z4x"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="14" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUf-yQ-8Tx">
@@ -171,7 +159,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCc-Yn-rFg"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="2m9-ph-uen"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="15" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-k0-jvU">
@@ -180,7 +167,6 @@
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBz-Gd-7sa"/>
-                                                    <outletCollection property="gestureRecognizers" destination="hGb-Pw-LM4" appends="YES" id="hWv-kI-dOh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -240,12 +226,138 @@
                         <outlet property="button42" destination="CMi-2S-amN" id="cdR-jC-lUS"/>
                         <outlet property="button43" destination="uUf-yQ-8Tx" id="Ywm-Ez-9kk"/>
                         <outlet property="button44" destination="i3R-k0-jvU" id="kfa-O8-ZND"/>
+                        <outlet property="tapAndHoldGestureRecognizer" destination="hGb-Pw-LM4" id="Qto-bN-vcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="hGb-Pw-LM4"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" numberOfTapsRequired="1" id="hGb-Pw-LM4">
+                    <connections>
+                        <action selector="buttonHold:" destination="BYZ-38-t0r" id="Qbg-gU-YIv"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="492" y="442.5"/>
+        </scene>
+        <!--Record a new sound-->
+        <scene sceneID="Z1J-ui-OEb">
+            <objects>
+                <viewController title="Record a new sound" id="GWI-wj-vx6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VK9-IP-G8a"/>
+                        <viewControllerLayoutGuide type="bottom" id="D4A-gv-9PV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ygx-LP-nph">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hP-ME-VnQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Play"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="369" y="344" width="63" height="63"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ace-vg-esT">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <string key="text">To record, hit "Record" and start playing your instrument into the microphone.
+When done, hit "Stop". You will be able to check your recording, using the "Play" and "Stop" button.
+Once you are satisfied with what you have, hit "Apply to Button" to bind the sound clip to the button.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="97" width="760" height="128"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKi-ca-c9J">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Apply to Button"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="308" y="466" width="185" height="52"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWQ-2p-IeP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Record"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="358" y="274" width="84" height="51"/>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record a new sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-cS-Caj">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="38" width="286" height="61"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0hP-ME-VnQ"/>
+                                <exclude reference="ace-vg-esT"/>
+                                <exclude reference="eKi-ca-c9J"/>
+                                <exclude reference="lWQ-2p-IeP"/>
+                                <exclude reference="zxP-cS-Caj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="0hP-ME-VnQ"/>
+                                <include reference="ace-vg-esT"/>
+                                <include reference="eKi-ca-c9J"/>
+                                <include reference="lWQ-2p-IeP"/>
+                                <include reference="zxP-cS-Caj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="bXi-2n-J7I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PDK-jr-5c8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="5.25"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="8tr-rW-5Q1">
+            <objects>
+                <viewController id="HGs-ZD-O4E" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PK6-hs-aTf"/>
+                        <viewControllerLayoutGuide type="bottom" id="VfI-AI-Frt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gTc-YI-LB5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="9lk-kc-hIy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NH-zI-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="-639.75"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OQP-YB-Rpg">
+            <objects>
+                <tabBarController id="I2L-bJ-Smf" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ghs-vx-cHG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HGs-ZD-O4E" kind="relationship" relationship="viewControllers" id="Eol-JG-Ix5"/>
+                        <segue destination="GWI-wj-vx6" kind="relationship" relationship="viewControllers" id="RO2-DG-ZjX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZA-HN-hc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486" y="-317.25"/>
         </scene>
     </scenes>
     <resources>
