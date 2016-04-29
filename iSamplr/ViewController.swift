@@ -15,9 +15,6 @@ class ViewController: UIViewController {
 	let instance = ButtonModel.model
 	
 	// MARK: IBOutlet, storyboard stuff
-	@IBOutlet var tapAndHoldGestureRecognizer: UILongPressGestureRecognizer!
-	@IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
-	
 	@IBOutlet var button11: UIButton!
 	@IBOutlet var button12: UIButton!
 	@IBOutlet var button13: UIButton!
@@ -50,6 +47,7 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		setupSampleButtons()
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -65,6 +63,7 @@ class ViewController: UIViewController {
 	@IBAction func buttonTap(sender: AnyObject) {
 		// save current time
 		instance.players[sender.tag].timer = NSDate()
+		print(String(sender.tag))
 	}
 	
 	/**
@@ -75,10 +74,12 @@ class ViewController: UIViewController {
 	*/
 	@IBAction func buttonRelease(sender: UIButton) {
 		let endTimer = NSDate()
+		print(String(sender.tag))
 		print("button release, timer end, time difference is: " + String(endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer)))	
 		if endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer) >= 1.0 {
 			// calls the smart menu
-			smartMenuView.displayView(self.view, onButton: sender)
+			smartMenuView.displayView(view, onButton: sender)
+			
 		} else {
 			// dirty trik
 			if let sf = instance.players[sender.tag].soundFile, fe = instance.players[sender.tag].fileExtension {
