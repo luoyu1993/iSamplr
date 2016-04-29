@@ -10,9 +10,11 @@ import UIKit
 import AVFoundation
 
 class RecorderViewController: UIViewController {
+	// MARK: model setup
+	let instance = ButtonModel.model
 
 	@IBOutlet var recordButton: UIButton!
-	@IBOutlet var playAndStopButton: UIButton!
+	@IBOutlet var playButton: UIButton!
 	@IBOutlet var applyButton: UIButton!
 	
 	var recordingSession: AVAudioSession!
@@ -35,7 +37,7 @@ class RecorderViewController: UIViewController {
 		
 		
 		// UI
-		playAndStopButton.hidden = true
+		playButton.hidden = true
 		applyButton.hidden = true
 		
 		// initialize recorder
@@ -79,7 +81,7 @@ class RecorderViewController: UIViewController {
 			}
 			
 			recordButton.setTitle("Stop", forState: .Normal)
-			playAndStopButton.hidden = true
+			playButton.hidden = true
 			applyButton.hidden = true
 			recording = true
 		} else {
@@ -97,16 +99,26 @@ class RecorderViewController: UIViewController {
 			
 			
 			recordButton.setTitle("Record", forState: .Normal)
-			playAndStopButton.hidden = false
+			playButton.hidden = false
 			applyButton.hidden = false
 			recording = false
 		}
 	}
 	
-	@IBAction func playAndStopButtonTapped(sender: UIButton) {
+	@IBAction func playButtonTapped(sender: UIButton) {
+		if (!audioRecorder.recording){
+			do {
+				try audioPlayer = AVAudioPlayer(contentsOfURL: audioRecorder.url)
+				audioPlayer.play()
+			} catch {
+			}
+		}
 	}
 	
 	@IBAction func applyButtonTapped(sender: UIButton) {
+		// TODO: prompt the user for file name
+		// save that sound to directory
+		// apply that saved sound to the button
 	}
 
 	
