@@ -18,6 +18,7 @@
 		358612701CB0E9100069BC3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3586126E1CB0E9100069BC3E /* LaunchScreen.storyboard */; };
 		3586127B1CB0E9100069BC3E /* iSamplrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3586127A1CB0E9100069BC3E /* iSamplrTests.swift */; };
 		358C46001CB8187A00F00888 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 358C45FF1CB8187A00F00888 /* Sounds */; };
+		3592B7E21CD2D3DF0036F768 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */; };
 		35AF7F8A1CC430A6009A7B88 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF7F891CC430A6009A7B88 /* ButtonModel.swift */; };
 		35E3B3D11CC5195C006AE86D /* playerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3B3D01CC5195C006AE86D /* playerButton.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		3586127A1CB0E9100069BC3E /* iSamplrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iSamplrTests.swift; sourceTree = "<group>"; };
 		3586127C1CB0E9100069BC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358C45FF1CB8187A00F00888 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
+		3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
 		35AF7F891CC430A6009A7B88 /* ButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		35E3B3D01CC5195C006AE86D /* playerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				35E3B3D01CC5195C006AE86D /* playerButton.swift */,
 				35AF7F891CC430A6009A7B88 /* ButtonModel.swift */,
 				358612671CB0E9100069BC3E /* ViewController.swift */,
+				3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */,
 				35134E031CBBC0BA006B33E9 /* Images */,
 				358612691CB0E9100069BC3E /* Main.storyboard */,
 				3544D4FC1CD1428900142975 /* SmartMenuView.xib */,
@@ -227,6 +230,7 @@
 				35AF7F8A1CC430A6009A7B88 /* ButtonModel.swift in Sources */,
 				35E3B3D11CC5195C006AE86D /* playerButton.swift in Sources */,
 				358612661CB0E9100069BC3E /* AppDelegate.swift in Sources */,
+				3592B7E21CD2D3DF0036F768 /* RecorderViewController.swift in Sources */,
 				3544D4FF1CD1532200142975 /* SmartMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
