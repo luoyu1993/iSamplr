@@ -9,6 +9,7 @@
 
 import UIKit
 
+@IBDesignable
 class SmartMenuView: UIView {
 	
 	// MARK: Outlets
@@ -24,9 +25,12 @@ class SmartMenuView: UIView {
 	// view that holds everything that is loaded from the .xib file.
 	var view: UIView!
 	
+	var loaded = false
+	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 		setupView()
+
 	}
 	
 	override init(frame: CGRect) {
@@ -36,9 +40,9 @@ class SmartMenuView: UIView {
 
 	func setupView() {
 		view = loadViewFromXibFile()
-		view.frame = self.bounds
+		view.frame = bounds
 		view.translatesAutoresizingMaskIntoConstraints = false
-		super.addSubview(view)
+		self.addSubview(view)
 		
 		translatesAutoresizingMaskIntoConstraints = false
 		
@@ -137,6 +141,7 @@ class SmartMenuView: UIView {
 		let nib = UINib(nibName: "SmartMenuView", bundle: bundle)
 		let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
 		return view
+		
 	}
 	
 

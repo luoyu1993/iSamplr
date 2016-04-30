@@ -80,6 +80,7 @@ class ViewController: UIViewController {
 			// calls the smart menu
 			smartMenuView.displayView(view, onButton: sender)
 			
+			
 		} else {
 			// dirty trik
 			if let sf = instance.players[sender.tag].soundFile, fe = instance.players[sender.tag].fileExtension {

@@ -10,9 +10,11 @@ import UIKit
 import AVFoundation
 
 class RecorderViewController: UIViewController {
+	// MARK: model setup
+	let instance = ButtonModel.model
 
 	@IBOutlet var recordButton: UIButton!
-	@IBOutlet var playAndStopButton: UIButton!
+	@IBOutlet var playButton: UIButton!
 	@IBOutlet var applyButton: UIButton!
 	
 	var recordingSession: AVAudioSession!
@@ -30,26 +32,23 @@ class RecorderViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
 		
-		
 		// UI
-		playAndStopButton.hidden = true
+		playButton.hidden = true
 		applyButton.hidden = true
-		
+    }
+	
+	override func viewDidAppear(animated: Bool) {
 		// initialize recorder
 		let audioSession = AVAudioSession.sharedInstance()
 		do {
 			try audioSession.setCategory(AVAudioSessionCategoryRecord)
-			try audioRecorder = AVAudioRecorder(URL: directoryURL()!,
-			                                    settings: recordSettings)
+			try audioRecorder = AVAudioRecorder(URL: directoryURL()!, settings: recordSettings)
 			audioRecorder.prepareToRecord()
 		} catch {
 		}
-		
-
-    }
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +61,10 @@ class RecorderViewController: UIViewController {
 		let fileManager = NSFileManager.defaultManager()
 		let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
 		let documentDirectory = urls[0] as NSURL
-		let soundURL = documentDirectory.URLByAppendingPathComponent("sound.m4a")
+		let formatter = NSDateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd_HHmmss"
+		let soundURL = documentDirectory.URLByAppendingPathComponent("REC_" + formatter.stringFromDate(NSDate()))
+		print(soundURL.debugDescription)
 		return soundURL
 	}
 	
@@ -79,7 +81,7 @@ class RecorderViewController: UIViewController {
 			}
 			
 			recordButton.setTitle("Stop", forState: .Normal)
-			playAndStopButton.hidden = true
+			playButton.hidden = true
 			applyButton.hidden = true
 			recording = true
 		} else {
@@ -97,16 +99,26 @@ class RecorderViewController: UIViewController {
 			
 			
 			recordButton.setTitle("Record", forState: .Normal)
-			playAndStopButton.hidden = false
+			playButton.hidden = false
 			applyButton.hidden = false
 			recording = false
 		}
 	}
 	
-	@IBAction func playAndStopButtonTapped(sender: UIButton) {
+	@IBAction func playButtonTapped(sender: UIButton) {
+		if (!audioRecorder.recording){
+			do {
+				try audioPlayer = AVAudioPlayer(contentsOfURL: audioRecorder.url)
+				audioPlayer.play()
+			} catch {
+			}
+		}
 	}
 	
 	@IBAction func applyButtonTapped(sender: UIButton) {
+		// TODO: prompt the user for file name
+		// save that sound to directory
+		// apply that saved sound to the button
 	}
 
 	

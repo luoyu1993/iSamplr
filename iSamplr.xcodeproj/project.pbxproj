@@ -11,6 +11,7 @@
 		3544D4FD1CD1428900142975 /* SmartMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3544D4FC1CD1428900142975 /* SmartMenuView.xib */; };
 		3544D4FF1CD1532200142975 /* SmartMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3544D4FE1CD1532200142975 /* SmartMenuView.swift */; };
 		356CE9071CB9946A0039430B /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 356CE9061CB9946A0039430B /* Documents */; };
+		356E22E81CD3E15F00C395A7 /* FilerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E22E71CD3E15F00C395A7 /* FilerTableViewController.swift */; };
 		358612661CB0E9100069BC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358612651CB0E9100069BC3E /* AppDelegate.swift */; };
 		358612681CB0E9100069BC3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358612671CB0E9100069BC3E /* ViewController.swift */; };
 		3586126B1CB0E9100069BC3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358612691CB0E9100069BC3E /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		3544D4FC1CD1428900142975 /* SmartMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SmartMenuView.xib; sourceTree = "<group>"; };
 		3544D4FE1CD1532200142975 /* SmartMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartMenuView.swift; sourceTree = "<group>"; };
 		356CE9061CB9946A0039430B /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documents; sourceTree = "<group>"; };
+		356E22E71CD3E15F00C395A7 /* FilerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilerTableViewController.swift; sourceTree = "<group>"; };
 		358612621CB0E9100069BC3E /* iSamplr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSamplr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358612651CB0E9100069BC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		358612671CB0E9100069BC3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */,
 				35134E031CBBC0BA006B33E9 /* Images */,
 				358612691CB0E9100069BC3E /* Main.storyboard */,
+				356E22E71CD3E15F00C395A7 /* FilerTableViewController.swift */,
 				3544D4FC1CD1428900142975 /* SmartMenuView.xib */,
 				3544D4FE1CD1532200142975 /* SmartMenuView.swift */,
 				3586126C1CB0E9100069BC3E /* Assets.xcassets */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356E22E81CD3E15F00C395A7 /* FilerTableViewController.swift in Sources */,
 				358612681CB0E9100069BC3E /* ViewController.swift in Sources */,
 				35AF7F8A1CC430A6009A7B88 /* ButtonModel.swift in Sources */,
 				35E3B3D11CC5195C006AE86D /* playerButton.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I2L-bJ-Smf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -250,7 +250,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="playAndStopButtonTapped:" destination="GWI-wj-vx6" eventType="touchUpInside" id="Jpt-uq-QRT"/>
+                                    <action selector="playButtonTapped:" destination="GWI-wj-vx6" eventType="touchUpInside" id="1o2-lN-zgA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKi-ca-c9J">
@@ -404,10 +404,10 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="bXi-2n-J7I"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="" systemItem="more" id="bXi-2n-J7I"/>
                     <connections>
                         <outlet property="applyButton" destination="eKi-ca-c9J" id="k4l-Ex-6lm"/>
-                        <outlet property="playAndStopButton" destination="0hP-ME-VnQ" id="65f-v8-Ldn"/>
+                        <outlet property="playButton" destination="0hP-ME-VnQ" id="1ph-W9-MUq"/>
                         <outlet property="recordButton" destination="lWQ-2p-IeP" id="eOH-O1-xQD"/>
                     </connections>
                 </viewController>
@@ -415,20 +415,20 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
             </objects>
             <point key="canvasLocation" x="1251" y="5.25"/>
         </scene>
-        <!--Item 1-->
+        <!--Filer Table View Controller-->
         <scene sceneID="8tr-rW-5Q1">
             <objects>
-                <viewController id="HGs-ZD-O4E" sceneMemberID="viewController">
+                <viewController id="HGs-ZD-O4E" customClass="FilerTableViewController" customModule="iSamplr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PK6-hs-aTf"/>
                         <viewControllerLayoutGuide type="bottom" id="VfI-AI-Frt"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gTc-YI-LB5">
+                    <view key="view" contentMode="scaleToFill" id="gTc-YI-LB5" customClass="UITableView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="9lk-kc-hIy"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="9lk-kc-hIy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NH-zI-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
