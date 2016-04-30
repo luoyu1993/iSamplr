@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPopoverPresentationControllerDelegate {
 	
 	// MARK: model setup
 	let instance = ButtonModel.model
@@ -35,6 +35,8 @@ class ViewController: UIViewController {
 	@IBOutlet var button43: UIButton!
 	@IBOutlet var button44: UIButton!
 	
+	@IBOutlet var longPressGestureRecog: UILongPressGestureRecognizer!
+	
 	// the overlay smart menu view when the user press+holds a button for >1 sec
 	lazy var smartMenuView: SmartMenuView = {
 		let v = SmartMenuView()
@@ -47,12 +49,26 @@ class ViewController: UIViewController {
 		// Do any additional setup after loading the view, typically from a nib.
 		
 		setupSampleButtons()
-		
 	}
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "smartMenuPopover" {
+			let vc = segue.destinationViewController as UIViewController
+			let controller = vc.popoverPresentationController
+			
+			if controller != nil {
+				controller?.delegate = self
+			}
+		}
+	}
+	
+	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+		return .None
 	}
 	
 	// MARK: IBAction
@@ -78,11 +94,12 @@ class ViewController: UIViewController {
 		print("button release, timer end, time difference is: " + String(endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer)))	
 		if endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer) >= 1.0 {
 			// calls the smart menu
-			smartMenuView.displayView(view, onButton: sender)
+			
+//			smartMenuView.displayView(view, onButton: sender)
 			
 			
 		} else {
-			// dirty trik
+			// dirty trick
 			if let sf = instance.players[sender.tag].soundFile, fe = instance.players[sender.tag].fileExtension {
 				instance.players[sender.tag].setSound(sf, fileExtension: fe)
 				instance.players[sender.tag].player.prepareToPlay()
@@ -90,6 +107,13 @@ class ViewController: UIViewController {
 			}
 		}
 	}
+	
+	
+	@IBAction func longPressGestured(sender: AnyObject) {
+		self.performSegueWithIdentifier("smartMenuPopover", sender: self)
+	}
+	
+	
 	
 	
 	// MARK: initial/sample loadout setup
@@ -154,7 +178,10 @@ class ViewController: UIViewController {
 		instance.players[button.tag] = playerButton(button: button, soundFile: soundFile, fileExtension: fileExtension)
 	}
 	
-	// override
+	/**
+	* overridden setButtonInModel sets up the playerButton in the shared instance.
+	* @param button the UIButton instance
+	*/
 	private func setButtonInModel(button: UIButton) {
 		instance.players[button.tag] = playerButton(button: button)
 	}
