@@ -13,10 +13,12 @@ class RecorderViewController: UIViewController {
 	// MARK: model setup
 	let instance = ButtonModel.model
 
+	// MARK: Outlets
 	@IBOutlet var recordButton: UIButton!
 	@IBOutlet var playButton: UIButton!
 	@IBOutlet var applyButton: UIButton!
 	
+	// MARK: Instance Variables
 	var recordingSession: AVAudioSession!
 	var audioRecorder: AVAudioRecorder!
 	var audioPlayer: AVAudioPlayer!
@@ -29,7 +31,6 @@ class RecorderViewController: UIViewController {
 		AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))
 	]
 
-	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,9 +38,7 @@ class RecorderViewController: UIViewController {
 		// UI
 		playButton.hidden = true
 		applyButton.hidden = true
-    }
-	
-	override func viewDidAppear(animated: Bool) {
+		
 		// initialize recorder
 		let audioSession = AVAudioSession.sharedInstance()
 		do {
@@ -47,9 +46,10 @@ class RecorderViewController: UIViewController {
 			try audioRecorder = AVAudioRecorder(URL: directoryURL()!, settings: recordSettings)
 			audioRecorder.prepareToRecord()
 		} catch {
+			
 		}
-	}
-
+    }
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,13 +63,12 @@ class RecorderViewController: UIViewController {
 		let documentDirectory = urls[0] as NSURL
 		let formatter = NSDateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd_HHmmss"
-		let soundURL = documentDirectory.URLByAppendingPathComponent("REC_" + formatter.stringFromDate(NSDate()))
+		let soundURL = documentDirectory.URLByAppendingPathComponent("iSamplr-REC_" + formatter.stringFromDate(NSDate()) + ".m4a")
 		print(soundURL.debugDescription)
 		return soundURL
 	}
 	
 	@IBAction func recordButtonTapped(sender: UIButton) {
-		print("recordbuttontapped")
 		if !audioRecorder.recording {
 			print(audioRecorder.recording)
 			let audioSession = AVAudioSession.sharedInstance()
@@ -90,8 +89,9 @@ class RecorderViewController: UIViewController {
 			
 			do {
 				try audioSession.setActive(false)
-				
-				// this category allows the device to play through device's speakers, not the mini ear speakers for phone
+
+				// AVAudioSessionCategoryAmbient allows the device to play through device's internet speakers,
+				// not the phone speaker (the one that you use for phone calls)
 				try audioSession.setCategory(AVAudioSessionCategoryAmbient)
 			} catch {
 				print("err")
@@ -116,9 +116,18 @@ class RecorderViewController: UIViewController {
 	}
 	
 	@IBAction func applyButtonTapped(sender: UIButton) {
-		// TODO: prompt the user for file name
-		// save that sound to directory
-		// apply that saved sound to the button
+		let alertController = UIAlertController(title: "Save and apply?", message: nil, preferredStyle: .Alert)
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+			// hitting the cancel button does nothing (just dismisses the UIAlert)
+		}
+		alertController.addAction(cancelAction)
+		let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+			self.navigationController?.popViewControllerAnimated(true)
+		}
+		alertController.addAction(OKAction)
+		self.presentViewController(alertController, animated: true) {
+			// nothing should happen in the back when an alert is displayed
+		}
 	}
 
 	
