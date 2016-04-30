@@ -32,26 +32,23 @@ class RecorderViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-		
 		
 		// UI
 		playButton.hidden = true
 		applyButton.hidden = true
-		
+    }
+	
+	override func viewDidAppear(animated: Bool) {
 		// initialize recorder
 		let audioSession = AVAudioSession.sharedInstance()
 		do {
 			try audioSession.setCategory(AVAudioSessionCategoryRecord)
-			try audioRecorder = AVAudioRecorder(URL: directoryURL()!,
-			                                    settings: recordSettings)
+			try audioRecorder = AVAudioRecorder(URL: directoryURL()!, settings: recordSettings)
 			audioRecorder.prepareToRecord()
 		} catch {
 		}
-		
-
-    }
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,7 +61,10 @@ class RecorderViewController: UIViewController {
 		let fileManager = NSFileManager.defaultManager()
 		let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
 		let documentDirectory = urls[0] as NSURL
-		let soundURL = documentDirectory.URLByAppendingPathComponent("sound.m4a")
+		let formatter = NSDateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd_HHmmss"
+		let soundURL = documentDirectory.URLByAppendingPathComponent("REC_" + formatter.stringFromDate(NSDate()))
+		print(soundURL.debugDescription)
 		return soundURL
 	}
 	
