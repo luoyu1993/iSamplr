@@ -80,6 +80,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		// save current time
 		instance.players[sender.tag].timer = NSDate()
 		print(String(sender.tag))
+		
+		// TODO: change color to highlight color
 	}
 	
 	/**
@@ -89,6 +91,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	* otherwise play the sound that it is bound to (if no sound, no play).
 	*/
 	@IBAction func buttonRelease(sender: UIButton) {
+		// TODO: change color back to normal state color
+		
 		let endTimer = NSDate()
 		print(String(sender.tag))
 		print("button release, timer end, time difference is: " + String(endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer)))	

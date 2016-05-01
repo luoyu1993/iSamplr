@@ -41,6 +41,7 @@
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L76-BZ-7FT"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="M9s-TX-4bC"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="3Vb-wS-tUC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voB-Sw-aRN">
@@ -48,7 +49,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PBW-wt-2mS"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGJ-2H-Qx2"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="qgY-Vm-jme"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="4bn-kT-zXn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-pU-ufH">
@@ -56,7 +59,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nr-Nv-dGC"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDv-tk-X1U"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="0C5-cE-jCN"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="ULZ-Ye-byB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -69,7 +74,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nQy-NH-Pgl"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAh-NU-DnX"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="quf-OL-Ac9"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="5Uy-s0-jdS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9w-jK-MMQ">
@@ -77,7 +84,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfj-Wu-YHH"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fB-o7-0HL"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="9aM-v7-MHx"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="Vgp-BN-gc6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="709-q9-IDm">
@@ -85,7 +94,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d0l-JT-xgD"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oye-mh-0FW"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="mct-wf-PeD"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="W83-dU-7Gb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kca-zb-q39">
@@ -93,7 +104,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IvO-j1-JCE"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vRE-CS-Zbf"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="4NX-FO-0Ri"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="bPc-4O-abe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -106,7 +119,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p60-cp-krX"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SJk-IZ-xwn"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="Bp2-JG-ZY4"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="jFl-We-m70"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6P-Vh-pkh">
@@ -114,7 +129,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eR9-Uq-FhG"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFs-CW-26z"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="DQf-Bw-w4u"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="RjO-Mm-7rI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-P3-AM2">
@@ -122,7 +139,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AmG-QR-40p"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gaS-Ay-TGo"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="mgK-el-fGx"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="uy6-tn-9dy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-HC-op1">
@@ -130,7 +149,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gcV-gy-6Rg"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcE-Y4-pUD"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="ofs-I1-NMk"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="jUz-nd-0WE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -143,7 +164,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NmK-md-ySK"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6y6-wt-k3U"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="JvF-CZ-ydq"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="iTb-zY-qPA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="13" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-2S-amN">
@@ -151,7 +174,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jes-x1-w4G"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NPz-q2-kFz"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="ext-dz-66R"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="izW-r4-NHh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="14" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUf-yQ-8Tx">
@@ -159,7 +184,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCc-Yn-rFg"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZyG-lT-Zfq"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="pVA-IV-AXm"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="IVg-Dq-IGB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="15" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-k0-jvU">
@@ -167,7 +194,9 @@
                                                 <gestureRecognizers/>
                                                 <state key="normal" backgroundImage="Images/button.png"/>
                                                 <connections>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBz-Gd-7sa"/>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXj-sj-4dh"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="aP2-CN-5xc"/>
+                                                    <outletCollection property="gestureRecognizers" destination="qWp-Yf-Hvk" appends="YES" id="CdC-N7-FPd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
