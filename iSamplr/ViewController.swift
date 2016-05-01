@@ -35,7 +35,6 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	@IBOutlet var button43: UIButton!
 	@IBOutlet var button44: UIButton!
 	
-	@IBOutlet var longPressGestureRecog: UILongPressGestureRecognizer!
 	
 	// the overlay smart menu view when the user press+holds a button for >1 sec
 	lazy var smartMenuView: SmartMenuView = {
@@ -99,7 +98,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		if endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer) >= 1.0 {
 			// calls the smart menu
 			
-//			smartMenuView.displayView(view, onButton: sender)
+			self.performSegueWithIdentifier("smartMenuPopover", sender: self)
 			
 			
 		} else {
@@ -111,14 +110,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 			}
 		}
 	}
-	
-	
-	@IBAction func longPressGestured(sender: AnyObject) {
-		self.performSegueWithIdentifier("smartMenuPopover", sender: self)
-	}
-	
-	
-	
+
 	
 	// MARK: initial/sample loadout setup
 	
