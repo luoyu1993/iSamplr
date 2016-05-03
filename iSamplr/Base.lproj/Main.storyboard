@@ -25,37 +25,37 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="67K-Tx-MqI">
                                         <rect key="frame" x="0.0" y="0.0" width="500" height="125"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Of-g0-R7S">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Of-g0-R7S">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lhm-qf-PgM"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="Hl0-xG-sp9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-uc-1IG">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezR-uc-1IG">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L76-BZ-7FT"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="M9s-TX-4bC"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voB-Sw-aRN">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voB-Sw-aRN">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGJ-2H-Qx2"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="qgY-Vm-jme"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-pU-ufH">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg4-pU-ufH">
                                                 <rect key="frame" x="375" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDv-tk-X1U"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="0C5-cE-jCN"/>
@@ -66,37 +66,37 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4JK-M4-SY7">
                                         <rect key="frame" x="500" y="0.0" width="500" height="125"/>
                                         <subviews>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-6o-Kqa">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQX-6o-Kqa">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TAh-NU-DnX"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="quf-OL-Ac9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9w-jK-MMQ">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9w-jK-MMQ">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fB-o7-0HL"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="9aM-v7-MHx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="709-q9-IDm">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="709-q9-IDm">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oye-mh-0FW"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="mct-wf-PeD"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kca-zb-q39">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kca-zb-q39">
                                                 <rect key="frame" x="375" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vRE-CS-Zbf"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="4NX-FO-0Ri"/>
@@ -107,37 +107,37 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-F9-JTa">
                                         <rect key="frame" x="1000" y="0.0" width="500" height="125"/>
                                         <subviews>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYz-3N-9y4">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYz-3N-9y4">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SJk-IZ-xwn"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="Bp2-JG-ZY4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6P-Vh-pkh">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6P-Vh-pkh">
                                                 <rect key="frame" x="125" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cFs-CW-26z"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="DQf-Bw-w4u"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="10" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-P3-AM2">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXl-P3-AM2">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gaS-Ay-TGo"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="mgK-el-fGx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="11" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-HC-op1">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NyJ-HC-op1">
                                                 <rect key="frame" x="375" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcE-Y4-pUD"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="ofs-I1-NMk"/>
@@ -148,37 +148,37 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nhE-78-YQy">
                                         <rect key="frame" x="1500" y="0.0" width="500" height="125"/>
                                         <subviews>
-                                            <button opaque="NO" tag="12" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fon-Vr-Cqb">
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-2S-amN">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
-                                                <connections>
-                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6y6-wt-k3U"/>
-                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="JvF-CZ-ydq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="13" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-2S-amN">
-                                                <rect key="frame" x="125" y="0.0" width="125" height="125"/>
-                                                <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NPz-q2-kFz"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="ext-dz-66R"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="14" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUf-yQ-8Tx">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fon-Vr-Cqb">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="125"/>
+                                                <gestureRecognizers/>
+                                                <state key="normal" image="Images/button.png"/>
+                                                <connections>
+                                                    <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6y6-wt-k3U"/>
+                                                    <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="JvF-CZ-ydq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="14" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUf-yQ-8Tx">
                                                 <rect key="frame" x="250" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZyG-lT-Zfq"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="pVA-IV-AXm"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="15" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-k0-jvU">
+                                            <button opaque="NO" tag="15" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-k0-jvU">
                                                 <rect key="frame" x="375" y="0.0" width="125" height="125"/>
                                                 <gestureRecognizers/>
-                                                <state key="normal" backgroundImage="Images/button.png"/>
+                                                <state key="normal" image="Images/button.png"/>
                                                 <connections>
                                                     <action selector="buttonRelease:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXj-sj-4dh"/>
                                                     <action selector="buttonTap:" destination="BYZ-38-t0r" eventType="touchDown" id="aP2-CN-5xc"/>
@@ -241,31 +241,13 @@
                         <outlet property="button42" destination="CMi-2S-amN" id="cdR-jC-lUS"/>
                         <outlet property="button43" destination="uUf-yQ-8Tx" id="Ywm-Ez-9kk"/>
                         <outlet property="button44" destination="i3R-k0-jvU" id="kfa-O8-ZND"/>
-                        <segue destination="pa7-oj-Qzp" kind="popoverPresentation" identifier="smartMenuPopover" popoverAnchorView="ItJ-Vw-Ft9" id="SOh-NM-3Co">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="GWI-wj-vx6" kind="show" identifier="showRecorder" id="RbT-wc-jCv"/>
+                        <segue destination="3Q9-NY-Dgi" kind="show" identifier="showFiler" id="ZgM-6v-cfZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="442.5"/>
-        </scene>
-        <!--Smart Menu-->
-        <scene sceneID="pxK-E4-jVo">
-            <objects>
-                <viewController title="Smart Menu" id="pa7-oj-Qzp" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zPT-hH-RWn"/>
-                        <viewControllerLayoutGuide type="bottom" id="ej6-di-uHV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gx5-ED-Ugm">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RYv-o3-f7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="492" y="1097.25"/>
+            <point key="canvasLocation" x="505.5" y="453.75"/>
         </scene>
         <!--Record a new sound-->
         <scene sceneID="Z1J-ui-OEb">
@@ -360,7 +342,13 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiP-bJ-5U3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="Qsu-0E-qJf"/>
+                                    <navigationItem title="Record a new sound" id="Qsu-0E-qJf">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="XMD-Tf-9qs">
+                                            <connections>
+                                                <segue destination="yuY-pu-X9V" kind="unwind" identifier="cancel" unwindAction="unwindToVC:" id="tMB-H5-U0a"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -395,7 +383,7 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                                 <variation key="heightClass=regular-widthClass=regular" constant="291"/>
                             </constraint>
                             <constraint firstItem="D4A-gv-9PV" firstAttribute="top" secondItem="eKi-ca-c9J" secondAttribute="bottom" constant="227" id="nrS-z5-GCl">
-                                <variation key="heightClass=regular-widthClass=regular" constant="255"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="304"/>
                             </constraint>
                             <constraint firstItem="fiP-bJ-5U3" firstAttribute="centerX" secondItem="Ygx-LP-nph" secondAttribute="centerX" id="tQp-QO-R6w"/>
                         </constraints>
@@ -466,85 +454,73 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDK-jr-5c8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yuY-pu-X9V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1872" y="813"/>
+            <point key="canvasLocation" x="1265.25" y="785.25"/>
         </scene>
         <!--Filer Table View Controller-->
-        <scene sceneID="8tr-rW-5Q1">
+        <scene sceneID="xYc-Cj-L0u">
             <objects>
-                <viewController id="HGs-ZD-O4E" customClass="FilerTableViewController" customModule="iSamplr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PK6-hs-aTf"/>
-                        <viewControllerLayoutGuide type="bottom" id="VfI-AI-Frt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gTc-YI-LB5" customClass="UITableView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="3Q9-NY-Dgi" customClass="FilerTableViewController" customModule="iSamplr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ht9-V6-RuE">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cWg-Lu-9aq">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vl6-EE-bAO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vl6-EE-bAO" id="wNJ-jm-9lZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="44" width="760" height="707"/>
-                                </variation>
-                            </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="En2-KK-X1I">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="4Co-8e-bbz"/>
-                                </items>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="800" height="44"/>
-                                </variation>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="cWg-Lu-9aq"/>
-                                <exclude reference="En2-KK-X1I"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="cWg-Lu-9aq"/>
-                                <include reference="En2-KK-X1I"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="9lk-kc-hIy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4NH-zI-GfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="AA7-Ps-GdJ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Samples" id="oyf-Z7-fqQ">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QVH-Ve-L7b">
+                                        <connections>
+                                            <segue destination="rNi-90-leb" kind="unwind" unwindAction="unwindToVC:" id="PzA-ZG-GQR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="edit" id="4Tm-ED-TfF"/>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="DrW-C9-uXi" customClass="SoundFileTableViewCell" customModule="iSamplr" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DrW-C9-uXi" id="c5y-Wd-MqH">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-cJ-hZo">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="8" width="784" height="27"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="fUc-cJ-hZo"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <mask key="subviews">
+                                            <include reference="fUc-cJ-hZo"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="filenameLabel" destination="fUc-cJ-hZo" id="RGP-Dh-IN1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3Q9-NY-Dgi" id="4bw-la-VFU"/>
+                            <outlet property="delegate" destination="3Q9-NY-Dgi" id="ARK-32-EkX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2VQ-ff-co2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rNi-90-leb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1872" y="75"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="OQP-YB-Rpg">
-            <objects>
-                <tabBarController id="I2L-bJ-Smf" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ghs-vx-cHG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="HGs-ZD-O4E" kind="relationship" relationship="viewControllers" id="Eol-JG-Ix5"/>
-                        <segue destination="GWI-wj-vx6" kind="relationship" relationship="viewControllers" id="RO2-DG-ZjX"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dZA-HN-hc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1183.5" y="442.5"/>
+            <point key="canvasLocation" x="1265.25" y="73.5"/>
         </scene>
     </scenes>
     <resources>

@@ -35,19 +35,16 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	@IBOutlet var button43: UIButton!
 	@IBOutlet var button44: UIButton!
 	
-	
-	// the overlay smart menu view when the user press+holds a button for >1 sec
-	lazy var smartMenuView: SmartMenuView = {
-		let v = SmartMenuView()
-		return v
-	}()
-	
 	// MARK: overridden UIViewController functions
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
+		// this is for demo
 		setupSampleButtons()
+		
+		// this is for actual release
+		// setupButtons()
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -55,32 +52,16 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		// Dispose of any resources that can be recreated.
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "smartMenuPopover" {
-			let vc = segue.destinationViewController as UIViewController
-			let controller = vc.popoverPresentationController
-			
-			if controller != nil {
-				controller?.delegate = self
-			}
-		}
-	}
-	
-	func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-		return .None
-	}
-	
-	// MARK: IBAction
-	
 	/**
 	* buttonTap recognizes the tap on the button and starts the timer.
 	*/
-	@IBAction func buttonTap(sender: AnyObject) {
+	@IBAction func buttonTap(sender: UIButton) {
 		// save current time
 		instance.players[sender.tag].timer = NSDate()
 		print(String(sender.tag))
 		
 		// TODO: change color to highlight color
+		sender.setImage(instance.players[sender.tag].tapImage, forState: .Normal)
 	}
 	
 	/**
@@ -91,23 +72,93 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	*/
 	@IBAction func buttonRelease(sender: UIButton) {
 		// TODO: change color back to normal state color
+		sender.setImage(instance.players[sender.tag].restImage, forState: .Normal)
 		
 		let endTimer = NSDate()
-		print(String(sender.tag))
-		print("button release, timer end, time difference is: " + String(endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer)))	
 		if endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer) >= 1.0 {
+			
 			// calls the smart menu
-			
-			self.performSegueWithIdentifier("smartMenuPopover", sender: self)
-			
+			callSmartMenu(sender)
 			
 		} else {
-			// dirty trick
 			if let sf = instance.players[sender.tag].soundFile, fe = instance.players[sender.tag].fileExtension {
 				instance.players[sender.tag].setSound(sf, fileExtension: fe)
 				instance.players[sender.tag].player.prepareToPlay()
 				instance.players[sender.tag].player.play()
 			}
+		}
+	}
+	
+	/**
+	* callSmartMenu calls UIAlert of the Smart Menu
+	* @param sender the sound button
+	*/
+	private func callSmartMenu(sender: UIButton) {
+		let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
+		let recordSoundAction = UIAlertAction(title: "Record Sample", style: .Default) { action in self.performSegueWithIdentifier("showRecorder", sender: sender) }
+		let changeSoundAction = UIAlertAction(title: "Load Sample", style: .Default) { action in self.performSegueWithIdentifier("showFiler", sender: sender) }
+		let changeTapButtonAction = UIAlertAction(title: "Change Tap Color", style: .Default) {
+			action in self.callChangeButtonColorMenu(sender, changingTappedStateImage: true)
+		}
+		let changeNormalButtonAction = UIAlertAction(title: "Change Idle Color", style: .Default) {
+			action in self.callChangeButtonColorMenu(sender, changingTappedStateImage: false)
+		}
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+		
+		alertController.addAction(recordSoundAction)
+		alertController.addAction(changeSoundAction)
+		alertController.addAction(changeTapButtonAction)
+		alertController.addAction(changeNormalButtonAction)
+		alertController.addAction(cancelAction)
+		
+		self.presentViewController(alertController, animated: true) {
+			// nothing should happen in the back when an alert is displayed
+		}
+	}
+	
+	/**
+	* callChangeButtonColorMenu shows UIAlert of button colors, and set them
+	* @param sender: the sound button
+	* @param changingTappedStateImage: whether we are changing the tap image or rest image
+	*/
+	private func callChangeButtonColorMenu(sender: UIButton, changingTappedStateImage: Bool) {
+		let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
+		let grayAction = UIAlertAction(title: "Gray", style: .Default) {
+			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Gray)
+		}
+		let redAction = UIAlertAction(title: "Red", style: .Default) {
+			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Red)
+		}
+		let blueAction = UIAlertAction(title: "Blue", style: .Default) {
+			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Blue)
+		}
+		let yellowAction = UIAlertAction(title: "Yellow", style: .Default) {
+			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Yellow)
+		}
+		let greenAction = UIAlertAction(title: "Green", style: .Default) {
+			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Green)
+		}
+		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+		
+		alertController.addAction(grayAction)
+		alertController.addAction(redAction)
+		alertController.addAction(blueAction)
+		alertController.addAction(yellowAction)
+		alertController.addAction(greenAction)
+		alertController.addAction(cancelAction)
+		
+		self.presentViewController(alertController, animated: true) {
+			// nothing should happen in the back when an alert is displayed
+		}
+
+	}
+	
+	private func changeButtonImage(button: UIButton, changingTappedStateImage: Bool, toColor: ButtonColor) {
+		if changingTappedStateImage {
+			instance.players[button.tag].setTapImage(toColor.image())
+		} else {
+			button.setImage(toColor.image(), forState: .Normal)
+			instance.players[button.tag].setRestImage(toColor.image())
 		}
 	}
 
@@ -116,6 +167,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	
 	/**
 	* setupSampleButtons sets default sound setup. This is for loading sample sound loadout.
+	* FOR DEMO
 	*/
 	private func setupSampleButtons() {
 		setButtonInModel(button11, soundFile: "Sounds/RSChordA1", fileExtension: "aif")
@@ -128,15 +180,15 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		setButtonInModel(button23, soundFile: "Sounds/RSChordAbass3", fileExtension: "aif")
 		setButtonInModel(button24, soundFile: "Sounds/RSChordAbass4", fileExtension: "aif")
 		
-		setButtonInModel(button31, soundFile: "Sounds/RShihat", fileExtension: "aif")
-		setButtonInModel(button32, soundFile: "Sounds/RShihat", fileExtension: "aif")
-		setButtonInModel(button33, soundFile: "Sounds/RShihat", fileExtension: "aif")
-		setButtonInModel(button34, soundFile: "Sounds/RShihat", fileExtension: "aif")
+		setButtonInModel(button31, soundFile: "Documents/RShihat", fileExtension: "aif")
+		setButtonInModel(button32, soundFile: "Documents/RShihat", fileExtension: "aif")
+		setButtonInModel(button33, soundFile: "Documents/RShihat", fileExtension: "aif")
+		setButtonInModel(button34, soundFile: "Documents/RShihat", fileExtension: "aif")
 		
-		setButtonInModel(button41, soundFile: "Sounds/RShihat", fileExtension: "aif")
-		setButtonInModel(button42, soundFile: "Sounds/RSKick", fileExtension: "aif")
-		setButtonInModel(button43, soundFile: "Sounds/RSSnare", fileExtension: "aif")
-		setButtonInModel(button44, soundFile: "Sounds/RShihat", fileExtension: "aif")
+		setButtonInModel(button41, soundFile: "Documents/RShihat", fileExtension: "aif")
+		setButtonInModel(button42, soundFile: "Documents/RSKick", fileExtension: "aif")
+		setButtonInModel(button43, soundFile: "Documents/RSSnare", fileExtension: "aif")
+		setButtonInModel(button44, soundFile: "Documents/RShihat", fileExtension: "aif")
 	}
 	
 	/**
@@ -171,7 +223,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	* @param fileExtension the String of sound file's file extension ("wav")
 	*/
 	private func setButtonInModel(button: UIButton, soundFile: String, fileExtension: String) {
-		instance.players[button.tag] = playerButton(button: button, soundFile: soundFile, fileExtension: fileExtension)
+		instance.players[button.tag] = playerButton(button: button, soundFile: NSBundle.mainBundle().URLForResource(soundFile, withExtension: fileExtension)!, fileExtension: fileExtension)
 	}
 	
 	/**
@@ -182,7 +234,20 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		instance.players[button.tag] = playerButton(button: button)
 	}
 
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if (segue.identifier == "showRecorder") {
+			let svc = segue.destinationViewController as! RecorderViewController
+			svc.buttonTag = sender!.tag
+		}
+		else if (segue.identifier == "showFiler") {
+			let svc = segue.destinationViewController as! FilerTableViewController
+			svc.buttonTag = sender!.tag
+		}
+		// Get the new view controller using segue.destinationViewController.
+		// Pass the selected object to the new view controller.
+	}
 	
-	
-}
+	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
 
+	}
+}

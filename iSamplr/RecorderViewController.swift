@@ -12,6 +12,7 @@ import AVFoundation
 class RecorderViewController: UIViewController {
 	// MARK: model setup
 	let instance = ButtonModel.model
+	var buttonTag: Int!
 
 	// MARK: Outlets
 	@IBOutlet var recordButton: UIButton!
@@ -35,6 +36,8 @@ class RecorderViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 		
+		print(buttonTag)
+		
 		// UI
 		playButton.hidden = true
 		applyButton.hidden = true
@@ -55,16 +58,21 @@ class RecorderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
+	class func getDocumentsDirectory() -> String {
+		let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+		let documentsDirectory = paths[0]
+		return documentsDirectory
+	}
+
 	
-	// creating directory
-	func directoryURL() -> NSURL? {
+	// Helper function, returns the filename in proper format
+	private func directoryURL() -> NSURL? {
 		let fileManager = NSFileManager.defaultManager()
 		let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
 		let documentDirectory = urls[0] as NSURL
 		let formatter = NSDateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd_HHmmss"
 		let soundURL = documentDirectory.URLByAppendingPathComponent("iSamplr-REC_" + formatter.stringFromDate(NSDate()) + ".m4a")
-		print(soundURL.debugDescription)
 		return soundURL
 	}
 	
@@ -106,7 +114,7 @@ class RecorderViewController: UIViewController {
 	}
 	
 	@IBAction func playButtonTapped(sender: UIButton) {
-		if (!audioRecorder.recording){
+		if (!audioRecorder.recording) {
 			do {
 				try audioPlayer = AVAudioPlayer(contentsOfURL: audioRecorder.url)
 				audioPlayer.play()
@@ -116,29 +124,27 @@ class RecorderViewController: UIViewController {
 	}
 	
 	@IBAction func applyButtonTapped(sender: UIButton) {
+		
 		let alertController = UIAlertController(title: "Save and apply?", message: nil, preferredStyle: .Alert)
-		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+		let cancelAction = UIAlertAction(title: "No", style: .Cancel) { (action) in
 			// hitting the cancel button does nothing (just dismisses the UIAlert)
 		}
 		alertController.addAction(cancelAction)
-		let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+		let OKAction = UIAlertAction(title: "Yes", style: .Default) { (_) in
+			self.instance.players[self.buttonTag].soundFile = self.audioRecorder.url
+			self.performSegueWithIdentifier("cancel", sender: self)
 			self.navigationController?.popViewControllerAnimated(true)
 		}
 		alertController.addAction(OKAction)
-		self.presentViewController(alertController, animated: true) {
-			// nothing should happen in the back when an alert is displayed
-		}
+		self.presentViewController(alertController, animated: true, completion: nil)
 	}
 
 	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+		
     }
-    */
+	
 
 }

@@ -13,10 +13,8 @@ class ButtonModel {
 	static let model = ButtonModel()
 	var players: [playerButton]
 	
-	
 	init() {
 		players = [playerButton](count: 16, repeatedValue: playerButton())
-		
 	}
 	
 	/**
@@ -25,10 +23,9 @@ class ButtonModel {
 	* @soundFile the String of path to the sound file
 	* @fileExtension the file extension of the sound file
 	*/
-	func changeButtonSound(index: Int, soundFile: String, fileExtension: String) {
+	func changeButtonSound(index: Int, soundFile: NSURL, fileExtension: String) {
 		players[index].setSound(soundFile, fileExtension: fileExtension)
 	}
-	
 	
 	private func addButtonToModel(button: UIButton) {
 		players.append(playerButton(button: button))
@@ -36,32 +33,6 @@ class ButtonModel {
 	
 	private func addButtonToModel(button: UIButton, soundFile: String, fileExtension: String) {
 		players.append(playerButton(button: button))
-		players.last?.setSound(soundFile, fileExtension: fileExtension)
-	}
-
-	
-	// load player with given sound
-	func loadPlayerWithSound() {
-		
-	}
-	
-	// set button's default color
-	func setButtonNormalColor() {
-		
-	}
-	
-	// set button's touch color
-	func setButtonTapColor() {
-		
-	}
-	
-	// go to load view
-	func loadSoundView() {
-		
-	}
-	
-	// record view
-	func loadRecordView() {
-		
+		players.last?.setSound(NSBundle.mainBundle().URLForResource(soundFile, withExtension: fileExtension)!, fileExtension: fileExtension)
 	}
 }
