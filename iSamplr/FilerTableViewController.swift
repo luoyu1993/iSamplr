@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FilerTableViewController: UITableViewController {
+	var soundFiles = [NSURL]()
+	var buttonTag: Int!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		soundFiles = getFolderContents()
 		// Uncomment the following line to preserve selection between presentations
 		// self.clearsSelectionOnViewWillAppear = false
-		
-		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-		// self.navigationItem.rightBarButtonItem = self.editButtonItem()
+		print(self.soundFiles[0].debugDescription)
+		print(self.soundFiles[0].description)
+
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -28,29 +31,47 @@ class FilerTableViewController: UITableViewController {
 	// MARK: - Table view data source
 	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		// #warning Incomplete implementation, return the number of sections
-		return 0
+		return 1
 	}
 	
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		// #warning Incomplete implementation, return the number of rows
-		return 0
+		return soundFiles.count
 	}
-	/**
-	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> SoundFileTableViewCell {
 		let cellIdentifier = "cell"
-		
-		var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)! as UITableViewCell
-		
-		cell.textLabel.text = self.recipes[indexPath.row]
-		
-		var image : UIImage = UIImage(named: "osx_design_view_messages")
-		println("The loaded image: \(image)")
-		cell.imageView.image = image
-		
+		let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)! as! SoundFileTableViewCell
+		cell.filenameLabel.text = self.soundFiles[indexPath.row].debugDescription
 		return cell
 	}
-*/
+	
+	
+	// http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder
+	func getFolderContents() -> [NSURL] {
+		// We need just to get the documents folder url
+		let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+		
+		// now lets get the directory contents (including folders)
+		do {
+			let directoryContents = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(documentsUrl, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
+			print(directoryContents)
+			
+		} catch let error as NSError {
+			print(error.localizedDescription)
+		}
+		// if you want to filter the directory contents you can do like this:
+		
+		
+		do {
+			let directoryUrls = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(documentsUrl, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
+			return directoryUrls
+		} catch let error as NSError {
+			print(error.localizedDescription)
+		}
+		
+		// this is dangerous
+		return [NSURL]()
+	}
 	
 	/*
 	// Override to support conditional editing of the table view.
@@ -61,7 +82,7 @@ class FilerTableViewController: UITableViewController {
 	*/
 	
 	/*
-	// Override to support editing the table view.
+// Override to support editing the table view.
 	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 	if editingStyle == .Delete {
 	// Delete the row from the data source
