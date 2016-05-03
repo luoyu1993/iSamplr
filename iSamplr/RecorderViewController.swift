@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class RecorderViewController: UIViewController {
+	
 	// MARK: model setup
 	let instance = ButtonModel.model
 	var buttonTag: Int!
@@ -20,6 +21,7 @@ class RecorderViewController: UIViewController {
 	@IBOutlet var applyButton: UIButton!
 	
 	// MARK: Instance Variables
+	// need these for audio playing and recording
 	var recordingSession: AVAudioSession!
 	var audioRecorder: AVAudioRecorder!
 	var audioPlayer: AVAudioPlayer!
@@ -31,12 +33,11 @@ class RecorderViewController: UIViewController {
 		AVNumberOfChannelsKey : NSNumber(int: 2),
 		AVEncoderAudioQualityKey : NSNumber(int: Int32(AVAudioQuality.Medium.rawValue))
 	]
-
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-		
-		print(buttonTag)
 		
 		// UI
 		playButton.hidden = true
@@ -49,7 +50,7 @@ class RecorderViewController: UIViewController {
 			try audioRecorder = AVAudioRecorder(URL: directoryURL()!, settings: recordSettings)
 			audioRecorder.prepareToRecord()
 		} catch {
-			
+			print("err")
 		}
     }
 	
@@ -58,14 +59,8 @@ class RecorderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	class func getDocumentsDirectory() -> String {
-		let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-		let documentsDirectory = paths[0]
-		return documentsDirectory
-	}
-
-	
 	// Helper function, returns the filename in proper format
+	// iSamplr-REC_YYYYMMDD_HHMMSS.m4a format
 	private func directoryURL() -> NSURL? {
 		let fileManager = NSFileManager.defaultManager()
 		let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
@@ -76,11 +71,12 @@ class RecorderViewController: UIViewController {
 		return soundURL
 	}
 	
+	// starts recording or stops recording
 	@IBAction func recordButtonTapped(sender: UIButton) {
 		if !audioRecorder.recording {
-			print(audioRecorder.recording)
 			let audioSession = AVAudioSession.sharedInstance()
 			do {
+				try audioSession.setCategory(AVAudioSessionCategoryRecord)
 				try audioSession.setActive(true)
 				audioRecorder.record()
 			} catch {
@@ -98,13 +94,12 @@ class RecorderViewController: UIViewController {
 			do {
 				try audioSession.setActive(false)
 
-				// AVAudioSessionCategoryAmbient allows the device to play through device's internet speakers,
-				// not the phone speaker (the one that you use for phone calls)
+				// AVAudioSessionCategoryAmbient allows the device to play through device's internal speakers,
+				// not the phone receiver (the one that you use for phone calls)
 				try audioSession.setCategory(AVAudioSessionCategoryAmbient)
 			} catch {
 				print("err")
 			}
-			
 			
 			recordButton.setTitle("Record", forState: .Normal)
 			playButton.hidden = false
@@ -113,16 +108,23 @@ class RecorderViewController: UIViewController {
 		}
 	}
 	
+	/**
+	* playButtonTapped starts playing the recorded sound. 
+	* no need to hide buttons around to show "stop" button,
+		because user should be able to "spam" the button in main view too
+	*/
 	@IBAction func playButtonTapped(sender: UIButton) {
 		if (!audioRecorder.recording) {
 			do {
 				try audioPlayer = AVAudioPlayer(contentsOfURL: audioRecorder.url)
 				audioPlayer.play()
-			} catch {
-			}
+			} catch { }
 		}
 	}
 	
+	/**
+	* applyButtonTapped applies the recorded sound to the button and unwinds recording view segue.
+	*/
 	@IBAction func applyButtonTapped(sender: UIButton) {
 		
 		let alertController = UIAlertController(title: "Save and apply?", message: nil, preferredStyle: .Alert)

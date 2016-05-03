@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35134E041CBBC0BA006B33E9 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 35134E031CBBC0BA006B33E9 /* Images */; };
-		352F30371CD83C98004819E0 /* FilerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352F30351CD83C98004819E0 /* FilerTableViewController.swift */; };
+		352F30371CD83C98004819E0 /* SoundFileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352F30351CD83C98004819E0 /* SoundFileTableViewController.swift */; };
 		352F30381CD83C98004819E0 /* SoundFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352F30361CD83C98004819E0 /* SoundFileTableViewCell.swift */; };
 		356CE9071CB9946A0039430B /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 356CE9061CB9946A0039430B /* Documents */; };
 		358612661CB0E9100069BC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358612651CB0E9100069BC3E /* AppDelegate.swift */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		35134E031CBBC0BA006B33E9 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
-		352F30351CD83C98004819E0 /* FilerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilerTableViewController.swift; sourceTree = "<group>"; };
+		352F30351CD83C98004819E0 /* SoundFileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFileTableViewController.swift; sourceTree = "<group>"; };
 		352F30361CD83C98004819E0 /* SoundFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFileTableViewCell.swift; sourceTree = "<group>"; };
 		356CE9061CB9946A0039430B /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documents; sourceTree = "<group>"; };
 		358612621CB0E9100069BC3E /* iSamplr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSamplr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +100,7 @@
 				35AF7F891CC430A6009A7B88 /* ButtonModel.swift */,
 				358612671CB0E9100069BC3E /* ViewController.swift */,
 				3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */,
-				352F30351CD83C98004819E0 /* FilerTableViewController.swift */,
+				352F30351CD83C98004819E0 /* SoundFileTableViewController.swift */,
 				352F30361CD83C98004819E0 /* SoundFileTableViewCell.swift */,
 				35134E031CBBC0BA006B33E9 /* Images */,
 				3586126C1CB0E9100069BC3E /* Assets.xcassets */,
@@ -225,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				352F30371CD83C98004819E0 /* FilerTableViewController.swift in Sources */,
+				352F30371CD83C98004819E0 /* SoundFileTableViewController.swift in Sources */,
 				358612681CB0E9100069BC3E /* ViewController.swift in Sources */,
 				35AF7F8A1CC430A6009A7B88 /* ButtonModel.swift in Sources */,
 				35E3B3D11CC5195C006AE86D /* playerButton.swift in Sources */,

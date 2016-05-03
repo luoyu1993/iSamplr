@@ -9,7 +9,7 @@
 import UIKit
 
 class SoundFileTableViewCell: UITableViewCell {
-
+	// MARK: Outlets
 	@IBOutlet var filenameLabel: UILabel!
 	
 	override func awakeFromNib() {

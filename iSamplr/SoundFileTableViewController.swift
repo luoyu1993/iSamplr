@@ -9,11 +9,12 @@
 import UIKit
 import AVFoundation
 
-class FilerTableViewController: UITableViewController {
+class SoundFileTableViewController: UITableViewController {
 	var soundFileNames = [String]()
 	var buttonTag: Int!
 	var samplePlayer: AVAudioPlayer? = nil
 	
+	// override
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		soundFileNames = getFolderContents()
@@ -27,15 +28,12 @@ class FilerTableViewController: UITableViewController {
 	}
 	
 	// MARK: - Table view data source
-	
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		return 1
 	}
-	
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return soundFileNames.count
 	}
-	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> SoundFileTableViewCell {
 		let cellIdentifier = "cell"
 		let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)! as! SoundFileTableViewCell
@@ -43,8 +41,12 @@ class FilerTableViewController: UITableViewController {
 		return cell
 	}
 	
+	/**
+	* getFolderContents returns a list of file names (an array of Strings) in Documents directory
+	*
+	* src: http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder
+ 	*/
 	
-	// http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder
 	func getFolderContents() -> [String] {
 		// We need just to get the documents folder url
 		let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
@@ -67,26 +69,13 @@ class FilerTableViewController: UITableViewController {
 		return [String]()
 	}
 	
-	// preview sound
-	// http://stackoverflow.com/questions/24386766/ios-sound-not-playing-in-swift
+	/**
+	* when a cell with filename of sound is tapped, it should play (like a preview)
+	*
+	* src: http://stackoverflow.com/questions/24386766/ios-sound-not-playing-in-swift
+	* TODO: troubleshoot locating the directory :(
+	*/
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		
-		/*
-		// let audioPath = NSBundle.mainBundle().URLForResource(, withExtension: "m4a")
-		print(soundFileNames[indexPath.row])
-		let file = String(soundFileNames[indexPath.row])
-		let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-		let url = NSURL(fileURLWithPath: path)
-		let filePath = url.URLByAppendingPathComponent(soundFileNames[indexPath.row])
-		
-		do {
-			try samplePlayer = AVAudioPlayer(contentsOfURL: file)
-		} catch {}
-		
-		self.samplePlayer!.prepareToPlay()
-		self.samplePlayer!.play()
-		*/
-		
 		let path = NSBundle.mainBundle().pathForResource(String(soundFileNames[indexPath.row].characters.dropLast(4)), ofType: "m4a")
 		let fileURL = NSURL(fileURLWithPath: path!)
 		do {
@@ -111,31 +100,5 @@ class FilerTableViewController: UITableViewController {
 			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 		}
 	}
-	
-	/*
-	// Override to support rearranging the table view.
-	override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-	
-	}
-	*/
-	
-	/*
-	// Override to support conditional rearranging of the table view.
-	override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-	// Return false if you do not want the item to be re-orderable.
-	return true
-	}
-	*/
-	
-	/*
-	// MARK: - Navigation
-	
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-	// Get the new view controller using segue.destinationViewController.
-	// Pass the selected object to the new view controller.
-	}
-	*/
-	
 }
 

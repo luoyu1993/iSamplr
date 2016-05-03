@@ -40,10 +40,10 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		// this is for demo
+		// this is for demo. comment out on release.
 		setupSampleButtons()
 		
-		// this is for actual release
+		// this is for actual release. uncomment on release.
 		// setupButtons()
 	}
 	
@@ -58,7 +58,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	@IBAction func buttonTap(sender: UIButton) {
 		// save current time
 		instance.players[sender.tag].timer = NSDate()
-		print(String(sender.tag))
+		// print(String(sender.tag))	// debugging purposes
 		
 		// TODO: change color to highlight color
 		sender.setImage(instance.players[sender.tag].tapImage, forState: .Normal)
@@ -94,6 +94,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	* @param sender the sound button
 	*/
 	private func callSmartMenu(sender: UIButton) {
+		
+		// make them
 		let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
 		let recordSoundAction = UIAlertAction(title: "Record Sample", style: .Default) { action in self.performSegueWithIdentifier("showRecorder", sender: sender) }
 		let changeSoundAction = UIAlertAction(title: "Load Sample", style: .Default) { action in self.performSegueWithIdentifier("showFiler", sender: sender) }
@@ -105,12 +107,14 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		}
 		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
 		
+		// add them
 		alertController.addAction(recordSoundAction)
 		alertController.addAction(changeSoundAction)
 		alertController.addAction(changeTapButtonAction)
 		alertController.addAction(changeNormalButtonAction)
 		alertController.addAction(cancelAction)
 		
+		// call them
 		self.presentViewController(alertController, animated: true) {
 			// nothing should happen in the back when an alert is displayed
 		}
@@ -122,6 +126,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	* @param changingTappedStateImage: whether we are changing the tap image or rest image
 	*/
 	private func callChangeButtonColorMenu(sender: UIButton, changingTappedStateImage: Bool) {
+		// make them
 		let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
 		let grayAction = UIAlertAction(title: "Gray", style: .Default) {
 			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Gray)
@@ -140,6 +145,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		}
 		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
 		
+		// add them
 		alertController.addAction(grayAction)
 		alertController.addAction(redAction)
 		alertController.addAction(blueAction)
@@ -147,12 +153,19 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		alertController.addAction(greenAction)
 		alertController.addAction(cancelAction)
 		
+		// call them
 		self.presentViewController(alertController, animated: true) {
 			// nothing should happen in the back when an alert is displayed
 		}
 
 	}
 	
+	/**
+	* changeButtonImage is called by callChangeButtonColorMenu(). It will change the color (= button image) of the given UIButton.
+	* @param button the UIButton to change image of
+	* @param changingTappedStateImage whether we are changing the tap image or rest image
+	* @param toColor the color to change to (enum)
+	*/
 	private func changeButtonImage(button: UIButton, changingTappedStateImage: Bool, toColor: ButtonColor) {
 		if changingTappedStateImage {
 			instance.players[button.tag].setTapImage(toColor.image())
@@ -167,7 +180,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	
 	/**
 	* setupSampleButtons sets default sound setup. This is for loading sample sound loadout.
-	* FOR DEMO
+	* THIS IS FOR DEMO
 	*/
 	private func setupSampleButtons() {
 		setButtonInModel(button11, soundFile: "Sounds/RSChordA1", fileExtension: "aif")
@@ -193,6 +206,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	
 	/**
 	* setupSampleButtons sets default sound setup. This is for loading empty sound loadout.
+	* THIS IS FOR ACTUAL PRODUCTION RELEASE
 	*/
 	private func setupButtons() {
 		setButtonInModel(button11)
@@ -240,13 +254,17 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 			svc.buttonTag = sender!.tag
 		}
 		else if (segue.identifier == "showFiler") {
-			let svc = segue.destinationViewController as! FilerTableViewController
+			let svc = segue.destinationViewController as! SoundFileTableViewController
 			svc.buttonTag = sender!.tag
 		}
 		// Get the new view controller using segue.destinationViewController.
 		// Pass the selected object to the new view controller.
 	}
 	
+	/**
+	* unwinds segue to this view controller.
+	* @param segue the storyboard segue
+	*/
 	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
 
 	}

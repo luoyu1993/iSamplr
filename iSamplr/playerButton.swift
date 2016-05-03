@@ -18,23 +18,29 @@ class playerButton {
 	var player = AVAudioPlayer()
 	var button: UIButton?
 	var timer = NSDate()
-	
+
+	// creates an empty instance
 	init() {
-		// creates an empty instance
 	}
-	
+
+	// creates an instance with button
 	init(button: UIButton) {
 		self.button = button
 	}
 	
+	// creates an instance with button and its sound
 	init(button: UIButton, soundFile: NSURL, fileExtension: String) {
 		self.button = button
 		self.soundFile = soundFile
 		self.fileExtension = fileExtension
-//		setSound(NSBundle.mainBundle().URLForResource(soundFile, withExtension: fileExtension)!, fileExtension: fileExtension)
 		setSound(soundFile, fileExtension: fileExtension)
 	}
-	
+
+	/**
+	* setSound sets this button's sound
+	* @param soundFile the
+	* @param 
+	*/
 	func setSound(soundFile: NSURL, fileExtension: String) {
 		do {
 			try self.player = AVAudioPlayer(contentsOfURL: soundFile)
@@ -54,9 +60,12 @@ class playerButton {
 	
 }
 
+
+// ButtonColor enum represents which button color to use when changing button color
 enum ButtonColor : Int {
 	case Gray = 0, Red, Blue, Green, Yellow
 	
+	// returns a simple description of this ButtonColor enum
 	func simpleDescription() -> String {
 		switch self {
 		case .Gray:
@@ -72,6 +81,7 @@ enum ButtonColor : Int {
 		}
 	}
 	
+	// returns the UIImage of each "colored" button image.
 	func image() -> UIImage {
 		switch self {
 		case .Gray:
