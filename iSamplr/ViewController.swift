@@ -180,10 +180,10 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		setButtonInModel(button23, soundFile: "Sounds/RSChordAbass3", fileExtension: "aif")
 		setButtonInModel(button24, soundFile: "Sounds/RSChordAbass4", fileExtension: "aif")
 		
-		setButtonInModel(button31, soundFile: "Documents/RShihat", fileExtension: "aif")
-		setButtonInModel(button32, soundFile: "Documents/RShihat", fileExtension: "aif")
-		setButtonInModel(button33, soundFile: "Documents/RShihat", fileExtension: "aif")
-		setButtonInModel(button34, soundFile: "Documents/RShihat", fileExtension: "aif")
+		setButtonInModel(button31, soundFile: "Documents/hat", fileExtension: "wav")
+		setButtonInModel(button32, soundFile: "Documents/kick", fileExtension: "wav")
+		setButtonInModel(button33, soundFile: "Documents/snare", fileExtension: "wav")
+		setButtonInModel(button34, soundFile: "Documents/clap", fileExtension: "wav")
 		
 		setButtonInModel(button41, soundFile: "Documents/RShihat", fileExtension: "aif")
 		setButtonInModel(button42, soundFile: "Documents/RSKick", fileExtension: "aif")

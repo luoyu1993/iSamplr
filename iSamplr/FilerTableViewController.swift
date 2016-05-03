@@ -55,7 +55,6 @@ class FilerTableViewController: UITableViewController {
 			var result = [String]()
 			for soundfile in soundFiles {
 				if let filename = soundfile {
-//					let choppedFilename = (filename as NSString).substringToIndex(10)
 					result.append(String(filename.characters.dropLast(4)))
 				}
 			}
