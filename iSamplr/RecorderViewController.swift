@@ -67,7 +67,7 @@ class RecorderViewController: UIViewController {
 		let documentDirectory = urls[0] as NSURL
 		let formatter = NSDateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd_HHmmss"
-		let soundURL = documentDirectory.URLByAppendingPathComponent("iSamplr-REC_" + formatter.stringFromDate(NSDate()) + ".m4a")
+		let soundURL = documentDirectory.URLByAppendingPathComponent("iSamplr-REC_" + formatter.stringFromDate(NSDate()))
 		return soundURL
 	}
 	

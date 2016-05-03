@@ -494,23 +494,38 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="8" width="784" height="27"/>
+                                                <rect key="frame" x="8" y="8" width="708" height="27"/>
                                             </variation>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-E7-6j4">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <state key="normal" title="Use"/>
+                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                                <rect key="frame" x="730" y="8" width="48" height="27"/>
+                                            </variation>
+                                            <connections>
+                                                <action selector="pickButtonTapped:" destination="DrW-C9-uXi" eventType="touchUpInside" id="cXd-tJ-34M"/>
+                                                <action selector="soundPickButtonTapped:" destination="3Q9-NY-Dgi" eventType="touchUpInside" id="wKm-xx-cTS"/>
+                                                <segue destination="rNi-90-leb" kind="unwind" unwindAction="unwindToVC:" id="WDy-QN-cWG"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="fUc-cJ-hZo"/>
+                                            <exclude reference="Sho-E7-6j4"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <mask key="subviews">
                                             <include reference="fUc-cJ-hZo"/>
+                                            <include reference="Sho-E7-6j4"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="filenameLabel" destination="fUc-cJ-hZo" id="RGP-Dh-IN1"/>
+                                    <outlet property="pickButton" destination="Sho-E7-6j4" id="0Yq-a4-2Ji"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

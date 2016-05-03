@@ -11,6 +11,7 @@ import UIKit
 class SoundFileTableViewCell: UITableViewCell {
 	// MARK: Outlets
 	@IBOutlet var filenameLabel: UILabel!
+	@IBOutlet var pickButton: UIButton!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,4 +23,9 @@ class SoundFileTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+	
+	@IBAction func pickButtonTapped(sender: UIButton) {
+		print("123")
+	}
+	
 }

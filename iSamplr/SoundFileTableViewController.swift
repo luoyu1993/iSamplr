@@ -10,9 +10,12 @@ import UIKit
 import AVFoundation
 
 class SoundFileTableViewController: UITableViewController {
+	let instance = ButtonModel.model
 	var soundFileNames = [String]()
+	var documentsURL = NSURL()
 	var buttonTag: Int!
-	var samplePlayer: AVAudioPlayer? = nil
+	var samplePlayer = AVAudioPlayer()
+	var selectedButton: Int!
 	
 	// override
 	override func viewDidLoad() {
@@ -49,15 +52,15 @@ class SoundFileTableViewController: UITableViewController {
 	
 	func getFolderContents() -> [String] {
 		// We need just to get the documents folder url
-		let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+		documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
 		
 		do {
-			let directoryUrls = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(documentsUrl, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
-			let soundFiles = directoryUrls.filter{ $0.pathExtension == "m4a" }.map{ $0.lastPathComponent }
+			let directoryUrls = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(documentsURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions())
+			let soundFiles = directoryUrls.map{ $0.lastPathComponent }
 			var result = [String]()
 			for soundfile in soundFiles {
 				if let filename = soundfile {
-					result.append(String(filename.characters.dropLast(4)))
+					result.append(filename)
 				}
 			}
 			return result
@@ -69,20 +72,26 @@ class SoundFileTableViewController: UITableViewController {
 		return [String]()
 	}
 	
+	// sets the button's sound as the picked sound
+	@IBAction func soundPickButtonTapped(sender: UIButton) {
+		self.instance.players[buttonTag].soundFile = samplePlayer.url
+	}
+	
 	/**
-	* when a cell with filename of sound is tapped, it should play (like a preview)
+	* when a cell with filename of sound is tapped, it should play (like a preview, just like when you are picking a ringtone)
 	*
 	* src: http://stackoverflow.com/questions/24386766/ios-sound-not-playing-in-swift
-	* TODO: troubleshoot locating the directory :(
+	* src: http://www.techotopia.com/index.php/Working_with_Directories_in_Swift_on_iOS_8
 	*/
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		let path = NSBundle.mainBundle().pathForResource(String(soundFileNames[indexPath.row].characters.dropLast(4)), ofType: "m4a")
-		let fileURL = NSURL(fileURLWithPath: path!)
+		selectedButton = indexPath.row
+		let soundFile = documentsURL.URLByAppendingPathComponent(soundFileNames[indexPath.row])
+		print(soundFile)
 		do {
-			try samplePlayer = AVAudioPlayer(contentsOfURL: fileURL)
+			try samplePlayer = AVAudioPlayer(contentsOfURL: soundFile)
 		} catch {}
-		samplePlayer!.prepareToPlay()
-		samplePlayer!.play()
+		samplePlayer.prepareToPlay()
+		samplePlayer.play()
 	}
 	
 	// Override to support conditional editing of the table view.
