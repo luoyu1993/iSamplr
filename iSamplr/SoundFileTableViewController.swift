@@ -74,7 +74,10 @@ class SoundFileTableViewController: UITableViewController {
 	
 	// sets the button's sound as the picked sound
 	@IBAction func soundPickButtonTapped(sender: UIButton) {
-		self.instance.players[buttonTag].soundFile = samplePlayer.url
+		let soundFile = documentsURL.URLByAppendingPathComponent(soundFileNames[selectedButton])
+		self.instance.players[buttonTag].soundFile = soundFile
+		
+		
 	}
 	
 	/**
