@@ -45,9 +45,7 @@ class SoundFileTableViewController: UITableViewController {
 	}
 	
 	/**
-	* getFolderContents returns a list of file names (an array of Strings) in Documents directory
-	*
-	* src: http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder
+	Returns a list of file names (an array of Strings) in Documents directory (http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder)
  	*/
 	
 	func getFolderContents() -> [String] {
@@ -89,7 +87,7 @@ class SoundFileTableViewController: UITableViewController {
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		selectedButton = indexPath.row
 		let soundFile = documentsURL.URLByAppendingPathComponent(soundFileNames[indexPath.row])
-		print(soundFile)
+		print(soundFile, " played")
 		do {
 			try samplePlayer = AVAudioPlayer(contentsOfURL: soundFile)
 		} catch {}

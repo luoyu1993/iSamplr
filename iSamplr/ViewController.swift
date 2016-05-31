@@ -52,9 +52,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		// Dispose of any resources that can be recreated.
 	}
 	
-	/**
-	* buttonTap recognizes the tap on the button and starts the timer.
-	*/
+	/// Recognizes the tap on the button and starts the timer.
 	@IBAction func buttonTap(sender: UIButton) {
 		// save current time
 		instance.players[sender.tag].timer = NSDate()
@@ -65,10 +63,10 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	}
 	
 	/**
-	* buttonRelease recognizes the release on the button and stops the timer.
-	* if the button was pressed and held for more than a second,
-	*	show a menu.
-	* otherwise play the sound that it is bound to (if no sound, no play).
+	Recognizes the release on the button and stops the timer.
+	
+	If the button was pressed and held for more than a second, show a menu.
+	Otherwise, play the sound that it is bound to (if no sound, nothing is played).
 	*/
 	@IBAction func buttonRelease(sender: UIButton) {
 		// TODO: change color back to normal state color
@@ -76,10 +74,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		
 		let endTimer = NSDate()
 		if endTimer.timeIntervalSinceDate(instance.players[sender.tag].timer) >= 1.0 {
-			
-			// calls the smart menu
 			callSmartMenu(sender)
-			
 		} else {
 			if let sf = instance.players[sender.tag].soundFile, fe = instance.players[sender.tag].fileExtension {
 				instance.players[sender.tag].setSound(sf, fileExtension: fe)
@@ -168,10 +163,10 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	*/
 	private func changeButtonImage(button: UIButton, changingTappedStateImage: Bool, toColor: ButtonColor) {
 		if changingTappedStateImage {
-			instance.players[button.tag].setTapImage(toColor.image())
+			instance.players[button.tag].tapImage = toColor.image()
 		} else {
 			button.setImage(toColor.image(), forState: .Normal)
-			instance.players[button.tag].setRestImage(toColor.image())
+			instance.players[button.tag].restImage = toColor.image()
 		}
 	}
 

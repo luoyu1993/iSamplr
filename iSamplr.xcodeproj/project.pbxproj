@@ -19,12 +19,22 @@
 		3586127B1CB0E9100069BC3E /* iSamplrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3586127A1CB0E9100069BC3E /* iSamplrTests.swift */; };
 		358C46001CB8187A00F00888 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = 358C45FF1CB8187A00F00888 /* Sounds */; };
 		3592B7E21CD2D3DF0036F768 /* RecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */; };
+		35A39DCD1CFD6E9500CA947D /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A39DCC1CFD6E9500CA947D /* MainViewControllerTests.swift */; };
 		35AF7F8A1CC430A6009A7B88 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF7F891CC430A6009A7B88 /* ButtonModel.swift */; };
 		35E3B3D11CC5195C006AE86D /* playerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3B3D01CC5195C006AE86D /* playerButton.swift */; };
+		35E913821CFD538300AD7751 /* playerButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E913811CFD538300AD7751 /* playerButtonTest.swift */; };
+		35E913841CFD5A6000AD7751 /* ButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E913831CFD5A6000AD7751 /* ButtonColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		358612771CB0E9100069BC3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3586125A1CB0E9100069BC3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 358612611CB0E9100069BC3E;
+			remoteInfo = iSamplr;
+		};
+		35E913921CFD647100AD7751 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3586125A1CB0E9100069BC3E /* Project object */;
 			proxyType = 1;
@@ -50,8 +60,13 @@
 		3586127C1CB0E9100069BC3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		358C45FF1CB8187A00F00888 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 		3592B7E11CD2D3DF0036F768 /* RecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderViewController.swift; sourceTree = "<group>"; };
+		35A39DCC1CFD6E9500CA947D /* MainViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		35AF7F891CC430A6009A7B88 /* ButtonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		35E3B3D01CC5195C006AE86D /* playerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerButton.swift; sourceTree = "<group>"; };
+		35E913811CFD538300AD7751 /* playerButtonTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerButtonTest.swift; sourceTree = "<group>"; };
+		35E913831CFD5A6000AD7751 /* ButtonColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonColor.swift; sourceTree = "<group>"; };
+		35E9138D1CFD647100AD7751 /* iSamplrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSamplrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E913911CFD647100AD7751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +84,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		35E9138A1CFD647100AD7751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +99,7 @@
 			children = (
 				358612641CB0E9100069BC3E /* iSamplr */,
 				358612791CB0E9100069BC3E /* iSamplrTests */,
+				35E9138E1CFD647100AD7751 /* iSamplrUITests */,
 				358612631CB0E9100069BC3E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +109,7 @@
 			children = (
 				358612621CB0E9100069BC3E /* iSamplr.app */,
 				358612761CB0E9100069BC3E /* iSamplrTests.xctest */,
+				35E9138D1CFD647100AD7751 /* iSamplrUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +120,7 @@
 				356CE9061CB9946A0039430B /* Documents */,
 				358C45FF1CB8187A00F00888 /* Sounds */,
 				358612651CB0E9100069BC3E /* AppDelegate.swift */,
+				35E913831CFD5A6000AD7751 /* ButtonColor.swift */,
 				35E3B3D01CC5195C006AE86D /* playerButton.swift */,
 				35AF7F891CC430A6009A7B88 /* ButtonModel.swift */,
 				358612671CB0E9100069BC3E /* ViewController.swift */,
@@ -115,9 +140,19 @@
 			isa = PBXGroup;
 			children = (
 				3586127A1CB0E9100069BC3E /* iSamplrTests.swift */,
+				35E913811CFD538300AD7751 /* playerButtonTest.swift */,
 				3586127C1CB0E9100069BC3E /* Info.plist */,
 			);
 			path = iSamplrTests;
+			sourceTree = "<group>";
+		};
+		35E9138E1CFD647100AD7751 /* iSamplrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				35A39DCC1CFD6E9500CA947D /* MainViewControllerTests.swift */,
+				35E913911CFD647100AD7751 /* Info.plist */,
+			);
+			path = iSamplrUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +193,24 @@
 			productReference = 358612761CB0E9100069BC3E /* iSamplrTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		35E9138C1CFD647100AD7751 /* iSamplrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35E913941CFD647100AD7751 /* Build configuration list for PBXNativeTarget "iSamplrUITests" */;
+			buildPhases = (
+				35E913891CFD647100AD7751 /* Sources */,
+				35E9138A1CFD647100AD7751 /* Frameworks */,
+				35E9138B1CFD647100AD7751 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35E913931CFD647100AD7751 /* PBXTargetDependency */,
+			);
+			name = iSamplrUITests;
+			productName = iSamplrUITests;
+			productReference = 35E9138D1CFD647100AD7751 /* iSamplrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +227,11 @@
 					};
 					358612751CB0E9100069BC3E = {
 						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 358612611CB0E9100069BC3E;
+					};
+					35E9138C1CFD647100AD7751 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = C579B8B4M9;
 						TestTargetID = 358612611CB0E9100069BC3E;
 					};
 				};
@@ -193,6 +251,7 @@
 			targets = (
 				358612611CB0E9100069BC3E /* iSamplr */,
 				358612751CB0E9100069BC3E /* iSamplrTests */,
+				35E9138C1CFD647100AD7751 /* iSamplrUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +277,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		35E9138B1CFD647100AD7751 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -232,6 +298,7 @@
 				358612661CB0E9100069BC3E /* AppDelegate.swift in Sources */,
 				352F30381CD83C98004819E0 /* SoundFileTableViewCell.swift in Sources */,
 				3592B7E21CD2D3DF0036F768 /* RecorderViewController.swift in Sources */,
+				35E913841CFD5A6000AD7751 /* ButtonColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +306,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E913821CFD538300AD7751 /* playerButtonTest.swift in Sources */,
 				3586127B1CB0E9100069BC3E /* iSamplrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35E913891CFD647100AD7751 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A39DCD1CFD6E9500CA947D /* MainViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +326,11 @@
 			isa = PBXTargetDependency;
 			target = 358612611CB0E9100069BC3E /* iSamplr */;
 			targetProxy = 358612771CB0E9100069BC3E /* PBXContainerItemProxy */;
+		};
+		35E913931CFD647100AD7751 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 358612611CB0E9100069BC3E /* iSamplr */;
+			targetProxy = 35E913921CFD647100AD7751 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -408,6 +489,28 @@
 			};
 			name = Release;
 		};
+		35E913951CFD647100AD7751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iSamplrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.hunj.iSamplrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iSamplr;
+			};
+			name = Debug;
+		};
+		35E913961CFD647100AD7751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iSamplrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.hunj.iSamplrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iSamplr;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,6 +537,15 @@
 			buildConfigurations = (
 				358612831CB0E9100069BC3E /* Debug */,
 				358612841CB0E9100069BC3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35E913941CFD647100AD7751 /* Build configuration list for PBXNativeTarget "iSamplrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E913951CFD647100AD7751 /* Debug */,
+				35E913961CFD647100AD7751 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

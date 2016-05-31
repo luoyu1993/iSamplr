@@ -25,7 +25,7 @@ class SoundFileTableViewCell: UITableViewCell {
     }
 	
 	@IBAction func pickButtonTapped(sender: UIButton) {
-		print("123")
+
 	}
 	
 }

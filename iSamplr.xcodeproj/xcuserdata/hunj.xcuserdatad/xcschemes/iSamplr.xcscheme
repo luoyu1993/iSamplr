@@ -20,13 +20,28 @@
                ReferencedContainer = "container:iSamplr.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "358612751CB0E9100069BC3E"
+               BuildableName = "iSamplrTests.xctest"
+               BlueprintName = "iSamplrTests"
+               ReferencedContainer = "container:iSamplr.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +50,16 @@
                BlueprintIdentifier = "358612751CB0E9100069BC3E"
                BuildableName = "iSamplrTests.xctest"
                BlueprintName = "iSamplrTests"
+               ReferencedContainer = "container:iSamplr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "35E9138C1CFD647100AD7751"
+               BuildableName = "iSamplrUITests.xctest"
+               BlueprintName = "iSamplrUITests"
                ReferencedContainer = "container:iSamplr.xcodeproj">
             </BuildableReference>
          </TestableReference>
