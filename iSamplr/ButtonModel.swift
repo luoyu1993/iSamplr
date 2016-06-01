@@ -23,28 +23,14 @@ class ButtonModel {
 		- index: the index number to change the sound of
 		- soundFile: the `NSURL` to the sound file to change into
 		- fileExtension: the file extension of the sound file
+	- Returns: whether the change was successful
 	*/
-	func changeButtonSound(index: Int, soundFile: NSURL, fileExtension: String) {
-		players[index].setSound(soundFile, fileExtension: fileExtension)
-	}
-	
-	/**
-	Adds the given UIButton to the model.
-	- Parameter button: the `UIButton` to insert into the model
-	*/
-	private func addButtonToModel(button: UIButton) {
-		players.append(playerButton(button: button))
-	}
-	
-	/**
-	Adds the given UIButton with sound bound to it into the model.
-	- Parameters:
-		- button: the UIButton to insert into the model
-		- soundFile: the `String` of path to the sound file
-		- fileExtension: the file extension of the sound file represented in `String`
-	*/
-	private func addButtonToModel(button: UIButton, soundFile: String, fileExtension: String) {
-		players.append(playerButton(button: button))
-		players.last?.setSound(NSBundle.mainBundle().URLForResource(soundFile, withExtension: fileExtension)!, fileExtension: fileExtension)
+	func changeButtonSound(index: Int, soundFile: NSURL, fileExtension: String) -> Bool {
+		if 0 <= index && index <= 16 {
+			players[index].setSound(soundFile, fileExtension: fileExtension)
+			return true
+		} else {
+			return false
+		}
 	}
 }
