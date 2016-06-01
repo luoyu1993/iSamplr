@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-// ButtonColor enum represents which button color to use when changing button color
+/// Represents which button color to use when changing button color
 enum ButtonColor : Int {
 	case Gray = 0, Red, Blue, Green, Yellow
 	
-	// returns a simple description of this ButtonColor enum
+	/// returns a simple String description of this ButtonColor enum
 	func simpleDescription() -> String {
 		switch self {
 		case .Gray:
@@ -29,7 +29,7 @@ enum ButtonColor : Int {
 		}
 	}
 	
-	// returns the UIImage of each "colored" button image.
+	/// returns the UIImage of each corresponding color's `UIImage`.
 	func image() -> UIImage {
 		switch self {
 		case .Gray:
