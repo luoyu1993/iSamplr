@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35041A1B1CFE985200ADECC7 /* AppDelegateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35041A1A1CFE985200ADECC7 /* AppDelegateUITests.swift */; };
 		35134E041CBBC0BA006B33E9 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 35134E031CBBC0BA006B33E9 /* Images */; };
 		352F30371CD83C98004819E0 /* SoundFileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352F30351CD83C98004819E0 /* SoundFileTableViewController.swift */; };
 		352F30381CD83C98004819E0 /* SoundFileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352F30361CD83C98004819E0 /* SoundFileTableViewCell.swift */; };
+		35354A6A1CFE6DFD00CD689A /* ButtonModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35354A691CFE6DFD00CD689A /* ButtonModelTests.swift */; };
+		35354A6C1CFE77D200CD689A /* ButtonColorEnumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35354A6B1CFE77D200CD689A /* ButtonColorEnumTests.swift */; };
+		356A413D1CFE7AE400097850 /* SoundFileTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A413C1CFE7AE400097850 /* SoundFileTableViewTests.swift */; };
 		356CE9071CB9946A0039430B /* Documents in Resources */ = {isa = PBXBuildFile; fileRef = 356CE9061CB9946A0039430B /* Documents */; };
 		358612661CB0E9100069BC3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358612651CB0E9100069BC3E /* AppDelegate.swift */; };
 		358612681CB0E9100069BC3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358612671CB0E9100069BC3E /* ViewController.swift */; };
@@ -44,9 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35041A1A1CFE985200ADECC7 /* AppDelegateUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateUITests.swift; sourceTree = "<group>"; };
 		35134E031CBBC0BA006B33E9 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		352F30351CD83C98004819E0 /* SoundFileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFileTableViewController.swift; sourceTree = "<group>"; };
 		352F30361CD83C98004819E0 /* SoundFileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFileTableViewCell.swift; sourceTree = "<group>"; };
+		35354A691CFE6DFD00CD689A /* ButtonModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonModelTests.swift; sourceTree = "<group>"; };
+		35354A6B1CFE77D200CD689A /* ButtonColorEnumTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonColorEnumTests.swift; path = ../iSamplr/ButtonColorEnumTests.swift; sourceTree = "<group>"; };
+		356A413C1CFE7AE400097850 /* SoundFileTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundFileTableViewTests.swift; sourceTree = "<group>"; };
 		356CE9061CB9946A0039430B /* Documents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documents; sourceTree = "<group>"; };
 		358612621CB0E9100069BC3E /* iSamplr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSamplr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358612651CB0E9100069BC3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,8 +147,10 @@
 		358612791CB0E9100069BC3E /* iSamplrTests */ = {
 			isa = PBXGroup;
 			children = (
+				35354A6B1CFE77D200CD689A /* ButtonColorEnumTests.swift */,
 				3586127A1CB0E9100069BC3E /* iSamplrTests.swift */,
 				35E913811CFD538300AD7751 /* playerButtonTest.swift */,
+				35354A691CFE6DFD00CD689A /* ButtonModelTests.swift */,
 				3586127C1CB0E9100069BC3E /* Info.plist */,
 			);
 			path = iSamplrTests;
@@ -150,7 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				35A39DCC1CFD6E9500CA947D /* MainViewControllerTests.swift */,
+				356A413C1CFE7AE400097850 /* SoundFileTableViewTests.swift */,
 				35E913911CFD647100AD7751 /* Info.plist */,
+				35041A1A1CFE985200ADECC7 /* AppDelegateUITests.swift */,
 			);
 			path = iSamplrUITests;
 			sourceTree = "<group>";
@@ -306,7 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35354A6C1CFE77D200CD689A /* ButtonColorEnumTests.swift in Sources */,
 				35E913821CFD538300AD7751 /* playerButtonTest.swift in Sources */,
+				35354A6A1CFE6DFD00CD689A /* ButtonModelTests.swift in Sources */,
 				3586127B1CB0E9100069BC3E /* iSamplrTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				35A39DCD1CFD6E9500CA947D /* MainViewControllerTests.swift in Sources */,
+				35041A1B1CFE985200ADECC7 /* AppDelegateUITests.swift in Sources */,
+				356A413D1CFE7AE400097850 /* SoundFileTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
