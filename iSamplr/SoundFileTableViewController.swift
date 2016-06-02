@@ -21,8 +21,6 @@ class SoundFileTableViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		soundFileNames = getFolderContents()
-		// Uncomment the following line to preserve selection between presentations
-		// self.clearsSelectionOnViewWillAppear = false
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -45,9 +43,9 @@ class SoundFileTableViewController: UITableViewController {
 	}
 	
 	/**
-	Returns a list of file names (an array of Strings) in Documents directory (http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder)
+	Returns a list of file names (an array of Strings) in Documents directory.
+	Read: http://stackoverflow.com/questions/27721418/getting-list-of-files-in-documents-folder
  	*/
-	
 	func getFolderContents() -> [String] {
 		// We need just to get the documents folder url
 		documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
@@ -70,17 +68,16 @@ class SoundFileTableViewController: UITableViewController {
 		return [String]()
 	}
 	
-	// sets the button's sound as the picked sound
+	/**
+	Sets the corresponding button's sound to the selected sound file.
+	*/
 	@IBAction func soundPickButtonTapped(sender: UIButton) {
 		let soundFile = documentsURL.URLByAppendingPathComponent(soundFileNames[selectedButton])
 		self.instance.players[buttonTag].soundFile = soundFile
-		
-		
 	}
 	
 	/**
-	* when a cell with filename of sound is tapped, it should play (like a preview, just like when you are picking a ringtone)
-	*
+	when a cell with filename of sound is tapped, it should play (like a preview, just like when you are picking a ringtone)
 	* src: http://stackoverflow.com/questions/24386766/ios-sound-not-playing-in-swift
 	* src: http://www.techotopia.com/index.php/Working_with_Directories_in_Swift_on_iOS_8
 	*/

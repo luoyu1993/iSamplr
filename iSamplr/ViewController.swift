@@ -14,6 +14,9 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	// MARK: model setup
 	let instance = ButtonModel.model
 	
+	/// whether we are in demo mode. demo mode will load up preset sounds.
+	let demoMode = true
+	
 	// MARK: IBOutlet, storyboard stuff
 	@IBOutlet var button11: UIButton!
 	@IBOutlet var button12: UIButton!
@@ -40,11 +43,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		// this is for demo. comment out on release.
-		setupSampleButtons()
-		
-		// this is for actual release. uncomment on release.
-		// setupButtons()
+		if demoMode {
+			setupSampleButtons()
+		} else {
+			setupButtons()
+		}
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -85,8 +88,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	}
 	
 	/**
-	* callSmartMenu calls UIAlert of the Smart Menu
-	* @param sender the sound button
+	Calls UIAlert of the Smart Menu
+	- Parameter sender: the `UIButton` that called this menu
 	*/
 	private func callSmartMenu(sender: UIButton) {
 		
@@ -116,12 +119,13 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	}
 	
 	/**
-	* callChangeButtonColorMenu shows UIAlert of button colors, and set them
-	* @param sender: the sound button
-	* @param changingTappedStateImage: whether we are changing the tap image or rest image
+	Displays UIAlert of button colors, and set them
+	- Parameters:
+		- sender: the sound button that called this UIAlert
+		- changingTappedStateImage: whether to change the tap image or rest image
 	*/
 	private func callChangeButtonColorMenu(sender: UIButton, changingTappedStateImage: Bool) {
-		// make them
+		// make each option
 		let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .Alert)
 		let grayAction = UIAlertAction(title: "Gray", style: .Default) {
 			action in self.changeButtonImage(sender, changingTappedStateImage: changingTappedStateImage, toColor: ButtonColor.Gray)
@@ -140,7 +144,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		}
 		let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
 		
-		// add them
+		// add them to the list of options
 		alertController.addAction(grayAction)
 		alertController.addAction(redAction)
 		alertController.addAction(blueAction)
@@ -148,7 +152,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		alertController.addAction(greenAction)
 		alertController.addAction(cancelAction)
 		
-		// call them
+		// call the UIAlert
 		self.presentViewController(alertController, animated: true) {
 			// nothing should happen in the back when an alert is displayed
 		}
@@ -156,10 +160,11 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	}
 	
 	/**
-	* changeButtonImage is called by callChangeButtonColorMenu(). It will change the color (= button image) of the given UIButton.
-	* @param button the UIButton to change image of
-	* @param changingTappedStateImage whether we are changing the tap image or rest image
-	* @param toColor the color to change to (enum)
+	Called by callChangeButtonColorMenu(), this will change the color (= button image) of the given `UIButton`.
+	- Parameters:
+		- button: the `UIButton` to change image of
+		- changingTappedStateImage: whether we are changing the tap image or rest image (`true` for tap/highlight, `false` for normal state)
+		- toColor: the color to change to (enum)
 	*/
 	private func changeButtonImage(button: UIButton, changingTappedStateImage: Bool, toColor: ButtonColor) {
 		if changingTappedStateImage {
@@ -174,8 +179,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	// MARK: initial/sample loadout setup
 	
 	/**
-	* setupSampleButtons sets default sound setup. This is for loading sample sound loadout.
-	* THIS IS FOR DEMO
+	Sets default sound setup. This is for loading sample sound loadout.
+	**THIS IS FOR DEMO.**
 	*/
 	private func setupSampleButtons() {
 		setButtonInModel(button11, soundFile: "Sounds/RSChordA1", fileExtension: "aif")
@@ -200,8 +205,8 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	}
 	
 	/**
-	* setupSampleButtons sets default sound setup. This is for loading empty sound loadout.
-	* THIS IS FOR ACTUAL PRODUCTION RELEASE
+	Sets default sound setup. This is for loading empty sound loadout.
+	**THIS IS FOR ACTUAL PRODUCTION RELEASE.**
 	*/
 	private func setupButtons() {
 		setButtonInModel(button11)
@@ -226,18 +231,19 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 	}
 	
 	/**
-	* setButtonInModel sets up the playerButton in the shared instance.
-	* @param button the UIButton instance
-	* @param soundFile the String of path to the sound file ("Sounds/something")
-	* @param fileExtension the String of sound file's file extension ("wav")
+	Sets up the `playerButton` in the singleton instance.
+	- Parameters:
+		- button: the `UIButton` instance
+		- soundFile: the `String` of path to the sound file, e.g. "Sounds/something"
+		- fileExtension: the String of sound file's file extension, e.g. "wav"
 	*/
 	private func setButtonInModel(button: UIButton, soundFile: String, fileExtension: String) {
 		instance.players[button.tag] = playerButton(button: button, soundFile: NSBundle.mainBundle().URLForResource(soundFile, withExtension: fileExtension)!, fileExtension: fileExtension)
 	}
 	
 	/**
-	* overridden setButtonInModel sets up the playerButton in the shared instance.
-	* @param button the UIButton instance
+	Sets up the playerButton in the shared instance.
+	- Parameter button: the `UIButton` instance of that sound button.
 	*/
 	private func setButtonInModel(button: UIButton) {
 		instance.players[button.tag] = playerButton(button: button)
@@ -256,10 +262,7 @@ class ViewController: UIViewController, UIPopoverPresentationControllerDelegate 
 		// Pass the selected object to the new view controller.
 	}
 	
-	/**
-	* unwinds segue to this view controller.
-	* @param segue the storyboard segue
-	*/
+	/// unwinds segue to this view controller.
 	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
 
 	}

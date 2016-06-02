@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -485,7 +485,7 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                                 <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DrW-C9-uXi" id="c5y-Wd-MqH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUc-cJ-hZo">
@@ -493,15 +493,22 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="8" y="8" width="708" height="27"/>
-                                            </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-E7-6j4">
                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="V0d-tI-hhv"/>
+                                            </constraints>
                                             <state key="normal" title="Use"/>
-                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                <rect key="frame" x="730" y="8" width="48" height="27"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="V0d-tI-hhv"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="V0d-tI-hhv"/>
+                                                </mask>
                                             </variation>
                                             <connections>
                                                 <action selector="pickButtonTapped:" destination="DrW-C9-uXi" eventType="touchUpInside" id="cXd-tJ-34M"/>
@@ -510,16 +517,43 @@ Once you are satisfied with what you have, hit "Apply to Button" to bind the sou
                                             </connections>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Sho-E7-6j4" firstAttribute="top" secondItem="c5y-Wd-MqH" secondAttribute="topMargin" id="Dq8-wT-qfh"/>
+                                        <constraint firstItem="Sho-E7-6j4" firstAttribute="centerY" secondItem="c5y-Wd-MqH" secondAttribute="centerY" id="E5B-G1-9sf"/>
+                                        <constraint firstItem="Sho-E7-6j4" firstAttribute="top" secondItem="fUc-cJ-hZo" secondAttribute="top" id="LBr-sh-EHC"/>
+                                        <constraint firstItem="Sho-E7-6j4" firstAttribute="leading" secondItem="fUc-cJ-hZo" secondAttribute="trailing" constant="14" id="UNe-HP-WDg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sho-E7-6j4" secondAttribute="trailing" constant="14" id="V2L-8N-sIn"/>
+                                        <constraint firstItem="Sho-E7-6j4" firstAttribute="bottom" secondItem="fUc-cJ-hZo" secondAttribute="bottom" id="WYk-TG-PGm"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="fUc-cJ-hZo" secondAttribute="leading" id="yBO-BS-qUq"/>
+                                    </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="fUc-cJ-hZo"/>
                                             <exclude reference="Sho-E7-6j4"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="Dq8-wT-qfh"/>
+                                            <exclude reference="E5B-G1-9sf"/>
+                                            <exclude reference="LBr-sh-EHC"/>
+                                            <exclude reference="UNe-HP-WDg"/>
+                                            <exclude reference="V2L-8N-sIn"/>
+                                            <exclude reference="WYk-TG-PGm"/>
+                                            <exclude reference="yBO-BS-qUq"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <mask key="subviews">
                                             <include reference="fUc-cJ-hZo"/>
                                             <include reference="Sho-E7-6j4"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="Dq8-wT-qfh"/>
+                                            <include reference="E5B-G1-9sf"/>
+                                            <include reference="LBr-sh-EHC"/>
+                                            <include reference="UNe-HP-WDg"/>
+                                            <include reference="V2L-8N-sIn"/>
+                                            <include reference="WYk-TG-PGm"/>
+                                            <include reference="yBO-BS-qUq"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

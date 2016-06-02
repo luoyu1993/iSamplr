@@ -109,9 +109,7 @@ class RecorderViewController: UIViewController {
 	}
 	
 	/**
-	* playButtonTapped starts playing the recorded sound. 
-	* no need to hide buttons around to show "stop" button,
-		because user should be able to "spam" the button in main view too
+	Starts playing the recorded sound. No need to hide buttons around to show "stop" button, because user should be able to "spam" the button in main view too.
 	*/
 	@IBAction func playButtonTapped(sender: UIButton) {
 		if (!audioRecorder.recording) {
@@ -123,7 +121,7 @@ class RecorderViewController: UIViewController {
 	}
 	
 	/**
-	* applyButtonTapped applies the recorded sound to the button and unwinds recording view segue.
+	Applies the recorded sound to the button and unwinds the recording view segue.
 	*/
 	@IBAction func applyButtonTapped(sender: UIButton) {
 		
@@ -145,7 +143,6 @@ class RecorderViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-		
     }
 	
 

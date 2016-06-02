@@ -25,11 +25,11 @@ class playerButton {
 	var button: UIButton?
 	var timer = NSDate()
 
-	// creates an empty instance
+	/// creates an empty instance
 	init() {
 	}
 
-	// creates an instance with button
+	/// creates an instance with given `UIButton`
 	init(button: UIButton) {
 		self.button = button
 	}
